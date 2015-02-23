@@ -1,0 +1,518 @@
+FORMAT: 1A
+
+# AMP-epsilon
+All api datetime fomat (Timezone: +00:00): YYYY-MM-DDThh:mmTZD(eg:2014-02-22T19:20+00:00)
+AMP platform will support the following
+
+
+# Group Tags
+## Tags Collection [/articles/tags]
+### List all article tags [GET]
++ Response 200 (application/json)
+
+        [{"id": "1", "name": "mobile"}, {"id": "2", "name": "computer"}]
+
+# Group Articles
+## Articles Collection [/articles/{?type}{?page}{?limit}{?sort}{?filter}]
+### List all articles [GET]
++ Parameters
+    + type (required, String, `1` ) ... type of article. 1: Article, 2: Blog, 3: Lesson.
+    + page (optional, number, `1` ) ... Default value: 1
+    + limit (optional, number, `10` ) ... Default value: 10
+    + sort (optional, number, `1` ) ... sort type of list. 1: Newest (last 48 hours), 2: Rating: low to high, 3: Rating: high to low.
+    + filter (optional, string, `mobile,pc` ) ... List of filter tag's IDs.
+    
++ Response 200 (application/json)
+
+        [
+        {
+        "id": "1", 
+        "title": "title 1", 
+        "summary": "summary 1", 
+        "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
+        "shareCount": 100, 
+        "viewCount": 120, 
+        "rating": 3.5, 
+        "cmtCount": 100, 
+        "createAt": "2014-02-23T19:20+00:00"
+        "tags": [
+            {"id": 2, "name": "computer"}
+        ]},
+        {
+        "id": "1", 
+        "title": "title 1", 
+        "summary": "summary 1", 
+        "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
+        "shareCount": 100, 
+        "viewCount": 120, 
+        "rating": 3.5, 
+        "cmtCount": 100, 
+        "createAt": "2014-02-23T15:20+00:00"
+        "tags": [
+            {"id": 2, "name": "computer"}
+        ]},
+        {
+        "id": "1", 
+        "title": "title 1", 
+        "summary": "summary 1", 
+        "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
+        "shareCount": 100, 
+        "viewCount": 120, 
+        "rating": 3.5, 
+        "cmtCount": 100, 
+        "createAt": "2014-02-22T19:20+00:00"
+        "tags": [
+            {"id": 2, "name": "computer"}
+        ]},
+        ]
+
+## Article [/articles/{articleId}]
+### Get Article Detail [GET]
++ Parameters
+    + articleId (string) ... ID of article.
++ Response 200 (application/json)
+
+        {
+        "id": "1",
+        "content": "html content",
+        "shareCount": 100, 
+        "viewCount": 120, 
+        "rating": 3.5, 
+        "cmtCount": 100,
+        "quizId": "1",
+        "pollId": "1"
+        }
+        
+# Group Comments
+## Comments Collection [/articles/{articleId}/comments]
+### List all Article's comments [GET]
++ Parameters
+    + articleId (required, string) ... ID of article.
++ Response 200 (application/json)
+
+        [
+        {"id": "1", "userId": "1", "userName": "Binh Nguyen", "comment": "comment for article 1"},
+        {"id": "2", "userId": "2", "userName": "Binh 2 Nguyen", "comment": "comment for article 2"}
+        ]
+        
+### Create a comment [POST]
++ Request (application/json)
+
+        {"token": "user token", "comment": "this is a comment"}
+
++ Response 201 (application/json)
+
+        {"id": "1"}
+        
+## Comment [/articles/{articleId}/comments/{commentId}]
+### Delete a comment [DELETE]
++ Parameters
+    + articleId (required, string) ... ID of article.
+    + commentId (required, string) ... ID of comment.
++ Request (application/json)
+    
+        {"token": "user token"}
+        
++ Response 204
+
+# Group Quiz
+Every question of a Quiz or a Poll has 2 type: SINGLE_CHOSEN and MULTI_CHOSEN.
+## Quiz [/quiz/{quizId}]
+### List all question of quiz [GET]
++ Response 200 (application/json)
+
+        [
+            {
+            "id": "1", 
+            "type": "SINGLE_CHOSEN" ,
+            "question": "Question 1", 
+            "optionList": [
+                {"id": "1", "text": "text for quiz 1"},
+                {"id": "2", "text": "text for quiz 2"},
+                {"id": "3", "text": "text for quiz 3"},
+                {"id": "3", "text": "text for quiz 3"},
+            ]
+            }, 
+            {
+            "id", "2", 
+            "type": "MULTI_CHOSEN" ,
+            "question": "Question 2", 
+            "optionList": [
+                {"id": "4", "text": "text for quiz 1"},
+                {"id": "5", "text": "text for quiz 2"},
+                {"id": "6", "text": "text for quiz 3"},
+                {"id": "7", "text": "text for quiz 3"},
+            ]
+            },
+        ]
+
+## Quiz Submit [/quiz/{quizId}/submit]
+### submit quiz result [POST]
++ Request (application/json)
+
+        [
+            {
+            "id": "1",
+            "chosenList": [
+                {"id": "1"}
+            ]
+            },
+            {
+            "id": "2",
+            "chosenList": [
+                {"id": "1"},
+                {"id": "2"}
+            ]
+            }
+        ]
+
++ Response 204
+
+# Group Polls
+## Poll [/polls/{pollId}]
+### List all question of poll [GET]
++ Response 200 (application/json)
+
+        [
+            {
+            "id": "1", 
+            "type": "SINGLE_CHOSEN" ,
+            "question": "Question 1", 
+            "optionList": [
+                {"id": "1", "text": "text for quiz 1"},
+                {"id": "2", "text": "text for quiz 2"},
+                {"id": "3", "text": "text for quiz 3"},
+                {"id": "3", "text": "text for quiz 3"},
+            ]
+            }, 
+            {
+            "id", "2", 
+            "type": "MULTI_CHOSEN" ,
+            "question": "Question 2", 
+            "optionList": [
+                {"id": "4", "text": "text for quiz 1"},
+                {"id": "5", "text": "text for quiz 2"},
+                {"id": "6", "text": "text for quiz 3"},
+                {"id": "7", "text": "text for quiz 3"},
+            ]
+            },
+        ]
+
+## Poll Submit [/polls/{pollId}/submit]
+### Submit poll result [POST]
++ Request (application/json)
+
+        [
+            {
+            "id": "1",
+            "chosenList": [
+                {"id": "1"}
+            ]
+            },
+            {
+            "id": "2",
+            "chosenList": [
+                {"id": "1"},
+                {"id": "2"}
+            ]
+            }
+        ]
+
++ Response 202
+
+# Group Events
+Each event has 3 states: OPEN, ONGOING, CLOSED.
+
+## Events Collection [/events/{?page}{?limit}{?sort}{?filter}]
+### List all Events [GET]
++ Parameters
+    + page (optional, number, `1` ) ... Default value: 1
+    + limit (optional, number, `10` ) ... Default value: 10
+    + sort (optional, number, `1` ) ... sort type of list. 1: Newest (last 48 hours), 2: Attendant: low to high, 3: Attendant: high to low.
+    + filter (optional, string, `mobile,pc` ) ... List of filter tag's IDs.
+
++ Response 200 (application/json)
+
+        [
+            {
+            "id": "1",
+            "name": "event name 1",
+            "thumb": "image link"
+            "startTime": "2014-02-20T19:20+00:00",
+            "endTime": "2014-02-22T19:20+00:00",
+            "status": "OPEN",
+            "joined": "false",
+            "attendee": 100,
+            "interestingCnt": 100,
+            "interestedCnt": 50
+            },
+            {
+            "id": "2",
+            "name": "event name 1 - event ongoing",
+            "thumb": "image link"
+            "startTime": "2014-02-20T19:20+00:00",
+            "endTime": "2014-02-22T19:20+00:00",
+            "status": "ONGOING",
+            "joined": "false",
+            "attendee": 100,
+            "interestingCnt": 100,
+            "interestedCnt": 50
+            },
+            {
+            "id": "3",
+            "name": "event name - user joined",
+            "thumb": "image link"
+            "startTime": "2014-02-20T19:20+00:00",
+            "endTime": "2014-02-22T19:20+00:00",
+            "status": "CLOSED",
+            "joined": "true",
+            "attendee": 100,
+            "interestingCnt": 100,
+            "interestedCnt": 50
+            }
+        ]
+        
+## Event [/events/{eventId}]
+### Get Event's detail [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "latitude": 10.000,
+            "longitude": 104.001,
+            "address": "165, hai ba trung",
+            "detail": "event detail",
+            "attendee": 100,
+            "interestingCnt": 100,
+            "interestedCnt": 50
+        }
+
+## Event's feedback [/events/{eventId}/feedback]
+Event's feedback has 2 types SINGLE_CHOSEN and MULTI_CHOSEN
+
+### Get event feedback [GET]
++ Response 200 (application/json)
+
+        {
+            "question": "question for feedback",
+            "type": "SINGLE_CHOSEN",
+            "optionList": [
+                {"id": "1", "text": "option 1"},
+                {"id": "2", "text": "option 2"},
+                {"id": "3", "text": "option 3"},
+            ]
+        }
+        
+## Event's feedback submit [/events/{eventId}/feedback/submit]
+### Submit event's feedback [POST]
++ Response 202 (application/json)
+
+        [
+            {"id": "1"},
+            {"id": "2"}
+        ]
+        
+# Group Discussions
+## Discussions Collection [/discussions]
+### Get all Discussions with 2 latest messages [GET]
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "1",
+                "title": "title",
+                "description": "discussion description",
+                "messages": [
+                    {"id": "1", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"},
+                    {"id": "2", "message": "message content 2", "userId": "2", "createAt": "2014-02-22T19:20+00:00"},
+                ]
+            },
+            {
+                "id": "2",
+                "title": "title",
+                "description": "discussion description",
+                "messages": [
+                    {"id": "1", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"},
+                    {"id": "2", "message": "message content 2", "userId": "2", "createAt": "2014-02-22T19:20+00:00"},
+                ]
+            }
+        ]
+        
+### Create new Discussion thread [POST]
++ Request (application/json)
+
+        {"token": "user_token", "title": "Discussion title", "description": "description"}
+
++ Response 201 (application/json)
+        
+        {"id": "1"}
+
+## Discussion [/discussion/{discussionId}/messages/{?page}{?limit}]
+### Get list messages [GET]
++ Parameters
+    + page (optional, number, `1` ) ... Default value: 1
+    + limit (optional, number, `10` ) ... Default value: 10
+
++ Response 200 (application/json)
+
+        [
+            {"id": "1", 
+            "message": "message content 1", 
+            "userId": "1", 
+            "createAt": "2014-02-22T19:20+00:00"
+            }
+        ]
+        
+### Create a message [POST]
++ Request (application/json)
+
+        {"token": "user_token", "message": "message"}
+    
++ Response 201
+
+        {"id": "1", "createAt": "2014-02-22T19:20+00:00"}
+        
+## Message [/discussion/{discussionId}/messages/{messageId}]     
+### Delete a message [DELETE]
++ Request (application/json)
+
+        {"token": "user_token", "id": "message_id"}
+    
++ Response 204
+
+# Group Users
+3 types (MEMBER, COACH, COMMUNITY)
+
+### Login [POST]
++ Request (application/json)
+    
+        {"userName": "user_name", "password": "md5_password"}
+    
++ Response 200 (application/json)
+
+        {"userId": "user_id", "userType": "MEMBER", "userName": "user_name", "token": "user_token"}
+
+## Reset password [/resetpass]
+### Reset password [POST]
++ Request (application/json)
+    
+        {"email": "user_email"}
+    
++ Response 204
+
+## Change password [/changepass]
+### Change password [POST]
++ Request (application/json)
+    
+        {"token": "user_token", "oldPassword": "raw_old_password", "newPassword": "md5_new_password"}
+    
++ Response 204
+
+## Users Collection [/users]
+### Get list Contacts [GET]
++ Response 200 (application/json)
+        
+        [
+        {"userId": "user_id_1", "userType": "COACH", "userName": "user_name", 
+        "jobTitle": "job title", "organization": "organization", 
+        "email": "email",
+        "registionDate": "2014-02-22T19:20+00:00", "interestedCnt": 100}, 
+        {"userId": "user_id_2", "userType": "COMMUNITY", "userName": "user_name", 
+        "jobTitle": "job title", "organization": "organization", 
+        "email": "email",
+        "registionDate": "2014-02-22T19:20+00:00", "interestedCnt": 100}, 
+        ]
+
+## User [/users/{userId}]
+### Get user's detail [GET]
++ Response 200 (application/json)
+
+        {
+            "interested": "false",
+            "interestedCnt": 100,
+            "summary": "summary",
+            "businessInterest": "Business interest",
+            "discussions":[
+                {"id": "1", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00",
+                "type": "CREATE|ANSWER", "contentType": "DISCUSSION|COMMENT", "contentTitle": "content_title", "contentId": "content_id"}
+            ],
+            "recommendations": [
+                {"id": "1", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"},
+                {"id": "2", "message": "message content 2", "userId": "2", "createAt": "2014-02-22T19:20+00:00"}
+            ]
+        }
+
+### Edit user's information [POST]
++ Request (application/json)
+        
+        {
+            "token": "user_token"
+            "jobTitle": "job title", 
+            "organization": "organization", 
+            "email": "email",
+            "summary": "summary",
+            "businessInterest": "Business interest"
+        }
+        
++ Response 202
+        
+## User's discussions [/users/{userId}/discussions/{?page}{?limit}]
+### Get list all user discussion [GET]
++ Parameters
+    + page (optional, number, `1` ) ... Default value: 1
+    + limit (optional, number, `10` ) ... Default value: 10
++ Response 200 (application/json)
+    
+        [
+            {"id": "1", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00",
+                "type": "CREATE|ANSWER", "contentType": "DISCUSSION|COMMENT", "contentTitle": "content_title", "contentId": "content_id"}
+        ]
+        
+## User's recommendations [/users/{userId}/recommendations/{?page}{?limit}]
+### Get list all user discussion [GET]
++ Parameters
+    + page (optional, number, `1` ) ... Default value: 1
+    + limit (optional, number, `10` ) ... Default value: 10
++ Response 200 (application/json)
+    
+        [
+            {"id": "1", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"},
+            {"id": "2", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"}
+        ]
+        
+### create/update a recommendation [POST]
++ Request (application/json)
+
+        {"token": "user_token", "message": "message"}
+
++ Response 201 (application/json)
+        
+        {"id": "recommendation_id"}
+        
+## Recommendation [/users/{userId}/recommendations/{recId}]        
+### Delete recommendation [DELETE]
++ Request (application/json)
+
+        {"token": "user_token"}
+
++ Response 204
+
+## User's Action [/users/{userId}/action]
++ Request (application/json)
+
+        {"token": "user_token", "actionType": "SHARE|FOLLOW|ATTEND|RATE", "relatedId": "id", "actionContent": "action_content"}
+        
++ Response 204
+
+# Group Notifications
+Notification will have 3 types: USER_ACTION, NEW_ARTICLE and NEW_EVENT.
+## Notifications Collection
+### Get list all notifications [GET]
++ Response
+
+        [
+            {"id", "type": "USER_ACTION", "contentId": "content_id", "contenTitle": "content_title", 
+            "contentThumb": "thumb", "createAt": "2014-02-22T19:20+00:00", "contentType": "1"}, 
+            {"id", "type": "USER_ACTION", "contentId": "content_id", "contenTitle": "content_title", 
+            "contentThumb": "thumb", "createAt": "2014-02-22T19:20+00:00", "contentType": "1"}
+        ]
