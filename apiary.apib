@@ -496,8 +496,11 @@ Option's type can be **INPUT** or **LABEL**
     
 + Response 204
 
-## Users Collection [/users]
+## Users Collection [/users/{?page}{?limit}]
 ### Get list Contacts [GET]
++ Parameters
+    + page (optional, number, `1` ) ... Default value: 1
+    + limit (optional, number, `10` ) ... Default value: 10]
 + Response 200 (application/json)
         
         [
