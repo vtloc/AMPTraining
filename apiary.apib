@@ -156,7 +156,7 @@ If user select Action A, the system may produce immediate feedback such as "This
 The message can be in red or green, based on the feedback's status field. Right now, we support two status: 
 **positive** for green color and **negative** for red color.
 
-## Quiz [/quiz/{quizId}]
+## Quiz [/quiz/{articleId}]
 ### List all question of quiz [GET]
 + Response 200 (application/json)
 
@@ -188,7 +188,7 @@ The message can be in red or green, based on the feedback's status field. Right 
             },
         ]
 
-## Quiz Submit [/quiz/{quizId}/submit]
+## Quiz Submit [/quiz/{articleId}/submit]
 ### submit quiz result [POST]
 + Request (application/json)
 
@@ -211,7 +211,7 @@ The message can be in red or green, based on the feedback's status field. Right 
 + Response 204
 
 # Group Polls
-## Poll [/polls/{pollId}]
+## Poll [/polls/{articleId}]
 ### List all question of poll [GET]
 + Response 200 (application/json)
 
@@ -243,7 +243,7 @@ The message can be in red or green, based on the feedback's status field. Right 
             },
         ]
 
-## Poll Submit [/polls/{pollId}/submit]
+## Poll Submit [/polls/{articleId}/submit]
 ### Submit poll result [POST]
 + Request (application/json)
 
