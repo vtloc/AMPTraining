@@ -195,11 +195,16 @@ The message can be in red or green, based on the feedback's status field. Right 
         [
             {
             "id": "1",
-            "choices": [ "1" ]
+            "choices": [ 
+                { "id" : "1" }
+                ]
             },
             {
             "id": "2",
-            "choices": [ "1", "2" ]
+            "choices": [ 
+                { "id" : "1" },
+                { "id" : "2" }
+                ]
             }
         ]
 
@@ -245,11 +250,16 @@ The message can be in red or green, based on the feedback's status field. Right 
         [
             {
             "id": "1",
-            "choices": [ "1" ]
+            "choices": [ 
+                { "id" : "1" }
+                ]
             },
             {
             "id": "2",
-            "choices": [ "1", "2" ]
+            "choices": [ 
+                { "id" : "1" },
+                { "id" : "2" }
+                ]
             }
         ]
 
@@ -358,18 +368,19 @@ Each event has 3 states: OPEN, ONGOING, CLOSED.
         }
 
 ## Event's feedback [/events/{eventId}/feedback]
-Event's feedback has 2 types SINGLE_CHOSEN and MULTI_CHOSEN
+Event's feedback has 2 types TEXT, SINGLE_CHOICE and MULTI_CHOICE
+Option's type can be **INPUT** or **TEXT**
 
 ### Get event feedback [GET]
 + Response 200 (application/json)
 
         {
             "question": "question for feedback",
-            "type": "SINGLE_CHOSEN",
+            "type": "SINGLE_CHOICE",
             "optionList": [
-                {"id": "1", "text": "option 1"},
-                {"id": "2", "text": "option 2"},
-                {"id": "3", "text": "option 3"},
+                {"id": "1", "type" : "INPUT", "text": "option 1"},
+                {"id": "2", "type" : "INPUT", "text": "option 2"},
+                {"id": "3","type" : "INPUT",  "text": "option 3"},
             ]
         }
         
@@ -377,9 +388,10 @@ Event's feedback has 2 types SINGLE_CHOSEN and MULTI_CHOSEN
 ### Submit event's feedback [POST]
 + Response 202 (application/json)
 
-        [
-            {"id": "1"},
-            {"id": "2"}
+        [ 
+        { "id" : "1" },
+        { "id" : "2" },
+        { "id" : "3", "value" : "This is not a good place for event"}
         ]
         
 # Group Discussions
