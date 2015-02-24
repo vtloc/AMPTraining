@@ -405,8 +405,8 @@ Option's type can be **INPUT** or **LABEL**
                 "title": "title",
                 "description": "discussion description",
                 "messages": [
-                    {"id": "1", "message": "message content 1", "userId": "1", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00"},
-                    {"id": "2", "message": "message content 2", "userId": "2", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00"},
+                    {"id": "1", "message": "message content 1", "userId": "1", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00", "parentId": ""},
+                    {"id": "2", "message": "message content 2", "userId": "2", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00", "parentId": ""},
                 ]
             },
             {
@@ -414,8 +414,8 @@ Option's type can be **INPUT** or **LABEL**
                 "title": "title",
                 "description": "discussion description",
                 "messages": [
-                    {"id": "1", "message": "message content 1", "userId": "1", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00"},
-                    {"id": "2", "message": "message content 2", "userId": "2", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00"},
+                    {"id": "1", "message": "message content 1", "userId": "1", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00", "parentId": ""},
+                    {"id": "2", "message": "message content 2", "userId": "2", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00", "parentId": ""},
                 ]
             }
         ]
@@ -442,6 +442,7 @@ Option's type can be **INPUT** or **LABEL**
             "message": "message content 1", 
             "userName": "user_name",
             "userId": "1", 
+            "parentId": "",
             "createAt": "2014-02-22T19:20+00:00"
             }
         ]
@@ -541,7 +542,7 @@ Option's type can be **INPUT** or **LABEL**
 + Response 202
         
 ## User's discussions [/users/{userId}/discussions/{?page}{?limit}]
-### Get list all user discussion [GET]
+### Get list all user discussions [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
     + limit (optional, number, `10` ) ... Default value: 10
@@ -553,15 +554,15 @@ Option's type can be **INPUT** or **LABEL**
         ]
         
 ## User's recommendations [/users/{userId}/recommendations/{?page}{?limit}]
-### Get list all user discussion [GET]
+### Get list all user recommendations [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
     + limit (optional, number, `10` ) ... Default value: 10
 + Response 200 (application/json)
     
         [
-            {"id": "1", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"},
-            {"id": "2", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"}
+            {"message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"},
+            {"message": "message content 2", "userId": "2", "createAt": "2014-02-22T19:20+00:00"}
         ]
         
 ### create/update a recommendation [POST]
@@ -570,10 +571,7 @@ Option's type can be **INPUT** or **LABEL**
         {"token": "user_token", "message": "message"}
 
 + Response 201 (application/json)
-        
-        {"id": "recommendation_id"}
-        
-## Recommendation [/users/{userId}/recommendations/{recId}]        
+            
 ### Delete recommendation [DELETE]
 + Request (application/json)
 
