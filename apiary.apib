@@ -561,8 +561,8 @@ Option's type can be **INPUT** or **LABEL**
 + Response 200 (application/json)
     
         [
-            {"message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"},
-            {"message": "message content 2", "userId": "2", "createAt": "2014-02-22T19:20+00:00"}
+            {"id": "id", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"},
+            {"id": "id", "message": "message content 2", "userId": "2", "createAt": "2014-02-22T19:20+00:00"}
         ]
 
 ## Recommendation [/users/{userId}/recommendations]         
@@ -572,6 +572,7 @@ Option's type can be **INPUT** or **LABEL**
         {"token": "user_token", "message": "message"}
 
 + Response 201 (application/json)
+        {"id": "id", "createAt": "2014-02-22T19:20+00:00"}
         
 ### Delete recommendation [DELETE]
 + Request (application/json)
