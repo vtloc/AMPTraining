@@ -393,7 +393,13 @@ Option's type can be **INPUT** or **LABEL**
         ]
         
 # Group Discussions
-## Discussions Collection [/discussions]
+## Discussions Collection [/discussions/{?page}{?limit}{?sort}{?filter}]
++ Parameters
+    + page (optional, number, `1` ) ... Default value: 1
+    + limit (optional, number, `10` ) ... Default value: 10
+    + sort (optional, number, `1` ) ... sort type of list. 1: Newest (last 48 hours), 2: Rating: low to high, 3: Rating: high to low.
+    + filter (optional, string, `mobile,pc` ) ... List of filter tag's IDs.
+    
 ### Get all Discussions with 2 latest messages [GET]
 + Response 200 (application/json)
 
