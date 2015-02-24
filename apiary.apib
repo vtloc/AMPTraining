@@ -138,7 +138,7 @@ AMP platform will support the following API:
 + Response 204
 
 # Group Quiz
-Every question of a Quiz or a Poll has 2 type: SINGLE_CHOSEN and MULTI_CHOSEN.
+Every question of a Quiz or a Poll has 2 type: SINGLE_CHOICE and MULTI_CHOICE.
 ## Quiz [/quiz/{quizId}]
 ### List all question of quiz [GET]
 + Response 200 (application/json)
@@ -146,7 +146,7 @@ Every question of a Quiz or a Poll has 2 type: SINGLE_CHOSEN and MULTI_CHOSEN.
         [
             {
             "id": "1", 
-            "type": "SINGLE_CHOSEN" ,
+            "type": "SINGLE_CHOICE" ,
             "question": "Question 1", 
             "optionList": [
                 {"id": "1", "text": "text for quiz 1"},
@@ -157,7 +157,7 @@ Every question of a Quiz or a Poll has 2 type: SINGLE_CHOSEN and MULTI_CHOSEN.
             }, 
             {
             "id", "2", 
-            "type": "MULTI_CHOSEN" ,
+            "type": "MULTI_CHOICE" ,
             "question": "Question 2", 
             "optionList": [
                 {"id": "4", "text": "text for quiz 1"},
