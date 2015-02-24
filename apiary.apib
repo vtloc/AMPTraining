@@ -113,8 +113,8 @@ AMP platform will support the following API:
 + Response 200 (application/json)
 
         [
-        {"id": "1", "userId": "1", "userName": "Binh Nguyen", "comment": "comment for article 1", "parentCommentId": ""},
-        {"id": "2", "userId": "2", "userName": "Binh 2 Nguyen", "comment": "comment for article 2", "parentCommentId": "1"}
+        {"id": "1", "userId": "1", "userName": "Binh Nguyen", "comment": "comment for article 1", "parentCommentId": "", "createAt": "2014-02-22T19:20+00:00"},
+        {"id": "2", "userId": "2", "userName": "Binh 2 Nguyen", "comment": "comment for article 2", "parentCommentId": "1", "createAt": "2014-02-22T19:20+00:00"}
         ]
         
 ### Create a comment [POST]
@@ -124,7 +124,7 @@ AMP platform will support the following API:
 
 + Response 201 (application/json)
 
-        {"id": "1"}
+        {"id": "1", "createAt": "2014-02-22T19:20+00:00"}
         
 ## Comment [/articles/{articleId}/comments/{commentId}]
 ### Delete a comment [DELETE]
