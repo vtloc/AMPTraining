@@ -139,6 +139,22 @@ AMP platform will support the following API:
 
 # Group Quiz
 Every question of a Quiz or a Poll has 2 type: SINGLE_CHOICE and MULTI_CHOICE.
+For each question, when user select some options, we may provide an immediately feedback based on their choices.
+For example:
+
+**What are the correct actions?**
+
+a- Action A
+
+b- Action B
+
+c- Action C
+
+d- Action D
+
+If user select Action A, the system may produce immediate feedback such as "This is not a correct action". 
+The message can be in red or green, based on the feedback's status field.
+
 ## Quiz [/quiz/{quizId}]
 ### List all question of quiz [GET]
 + Response 200 (application/json)
@@ -148,6 +164,10 @@ Every question of a Quiz or a Poll has 2 type: SINGLE_CHOICE and MULTI_CHOICE.
             "id": "1", 
             "type": "SINGLE_CHOICE" ,
             "question": "Question 1", 
+            "feedbackMessage" : [
+                {"optionIds": ["1", "2"], "message" : "This is not a correct answer", "status" : "positive"},
+                {"optionIds": ["2"], "message" : "This is not a correct answer", "status" : "negative"}
+            ],
             "optionList": [
                 {"id": "1", "text": "text for quiz 1"},
                 {"id": "2", "text": "text for quiz 2"},
