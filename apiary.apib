@@ -518,7 +518,7 @@ Option's type can be **INPUT** or **LABEL**
             "summary": "summary",
             "businessInterest": "Business interest",
             "discussions":[
-                {"id": "1", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00",
+                {"id": "1", "userId": "1", "createAt": "2014-02-22T19:20+00:00",
                 "type": "CREATE|ANSWER", "contentType": "DISCUSSION|COMMENT", "contentTitle": "content_title", "contentId": "content_id"}
             ],
             "recommendations": [
@@ -564,14 +564,15 @@ Option's type can be **INPUT** or **LABEL**
             {"message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"},
             {"message": "message content 2", "userId": "2", "createAt": "2014-02-22T19:20+00:00"}
         ]
-        
+
+## Recommendation [/users/{userId}/recommendations]         
 ### create/update a recommendation [POST]
 + Request (application/json)
 
         {"token": "user_token", "message": "message"}
 
 + Response 201 (application/json)
-            
+        
 ### Delete recommendation [DELETE]
 + Request (application/json)
 
@@ -588,13 +589,14 @@ Option's type can be **INPUT** or **LABEL**
 
 # Group Notifications
 Notification will have 3 types: USER_ACTION, NEW_ARTICLE and NEW_EVENT.
+contentType: BLOG, LESSON, ARTICLE.
 ## Notifications Collection [/notifications]
 ### Get list all notifications [GET]
 + Response 200 (applicaion/json)
 
         [
             {"id", "type": "USER_ACTION", "contentId": "content_id", "contenTitle": "content_title", 
-            "contentThumb": "thumb", "createAt": "2014-02-22T19:20+00:00", "contentType": "1"}, 
+            "createAt": "2014-02-22T19:20+00:00", "contentType": "BLOG"}, 
             {"id", "type": "USER_ACTION", "contentId": "content_id", "contenTitle": "content_title", 
-            "contentThumb": "thumb", "createAt": "2014-02-22T19:20+00:00", "contentType": "1"}
+            "createAt": "2014-02-22T19:20+00:00", "contentType": "LESSON"}
         ]
