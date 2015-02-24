@@ -153,7 +153,8 @@ c- Action C
 d- Action D
 
 If user select Action A, the system may produce immediate feedback such as "This is not a correct action". 
-The message can be in red or green, based on the feedback's status field.
+The message can be in red or green, based on the feedback's status field. Right now, we support two status: 
+**positive** for green color and **negative** for red color.
 
 ## Quiz [/quiz/{quizId}]
 ### List all question of quiz [GET]
@@ -171,8 +172,7 @@ The message can be in red or green, based on the feedback's status field.
             "optionList": [
                 {"id": "1", "text": "text for quiz 1"},
                 {"id": "2", "text": "text for quiz 2"},
-                {"id": "3", "text": "text for quiz 3"},
-                {"id": "3", "text": "text for quiz 3"},
+                {"id": "3", "text": "text for quiz 3"}
             ]
             }, 
             {
@@ -195,16 +195,11 @@ The message can be in red or green, based on the feedback's status field.
         [
             {
             "id": "1",
-            "chosenList": [
-                {"id": "1"}
-            ]
+            "choices": [ "1" ]
             },
             {
             "id": "2",
-            "chosenList": [
-                {"id": "1"},
-                {"id": "2"}
-            ]
+            "choices": [ "1", "2" ]
             }
         ]
 
