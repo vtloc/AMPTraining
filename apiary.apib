@@ -32,12 +32,12 @@ AMP platform will support the following API:
         "title": "title 1", 
         "summary": "summary 1", 
         "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
-        "shareCount": 100, 
-        "viewCount": 120, 
+        "share_count": 100, 
+        "view_count": 120, 
         "rating": 3.5, 
-        "ratingCount": 120,
-        "cmtCount": 100, 
-        "createAt": "2014-02-23T19:20+00:00"
+        "rating_count": 120,
+        "cmt_count": 100, 
+        "create_at": "2014-02-23T19:20+00:00"
         "tags": [
             {"id": 2, "name": "computer"}
         ]},
@@ -46,12 +46,12 @@ AMP platform will support the following API:
         "title": "title 1", 
         "summary": "summary 1", 
         "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
-        "shareCount": 100, 
-        "viewCount": 120, 
+        "share_count": 100, 
+        "view_count": 120, 
         "rating": 3.5, 
-        "ratingCount": 120,
-        "cmtCount": 100, 
-        "createAt": "2014-02-23T15:20+00:00"
+        "rating_count": 120,
+        "cmt_count": 100, 
+        "create_at": "2014-02-23T15:20+00:00"
         "tags": [
             {"id": 2, "name": "computer"}
         ]},
@@ -60,12 +60,12 @@ AMP platform will support the following API:
         "title": "title 1", 
         "summary": "summary 1", 
         "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
-        "shareCount": 100, 
-        "viewCount": 120, 
+        "share_count": 100, 
+        "view_count": 120, 
         "rating": 3.5, 
-        "ratingCount": 120,
-        "cmtCount": 100, 
-        "createAt": "2014-02-22T19:20+00:00"
+        "rating_count": 120,
+        "cmt_count": 100, 
+        "create_at": "2014-02-22T19:20+00:00"
         "tags": [
             {"id": 2, "name": "computer"}
         ]},
@@ -80,13 +80,13 @@ AMP platform will support the following API:
         {
         "id": "1",
         "content": "html content",
-        "shareCount": 100, 
-        "viewCount": 120, 
+        "share_count": 100, 
+        "view_count": 120, 
         "rating": 3.5, 
-        "ratingCount": 120,
-        "cmtCount": 100,
-        "quizId": "1",
-        "pollId": "1"
+        "rating_count": 120,
+        "cmt_count": 100,
+        "has_quiz": true,
+        "has_poll": true
         }
 
 ## Article [/articles/{articleId}/statistic]
@@ -97,11 +97,11 @@ AMP platform will support the following API:
 
         {
         "id": "1",
-        "shareCount": 100, 
-        "viewCount": 120, 
+        "share_count": 100, 
+        "view_count": 120, 
         "rating": 3.5, 
-        "ratingCount": 120,
-        "cmtCount": 100
+        "rating_count": 120,
+        "cmt_count": 100
         }
 
         
@@ -113,18 +113,18 @@ AMP platform will support the following API:
 + Response 200 (application/json)
 
         [
-        {"id": "1", "userId": "1", "userName": "Binh Nguyen", "comment": "comment for article 1", "parentCommentId": "", "createAt": "2014-02-22T19:20+00:00"},
-        {"id": "2", "userId": "2", "userName": "Binh 2 Nguyen", "comment": "comment for article 2", "parentCommentId": "1", "createAt": "2014-02-22T19:20+00:00"}
+        {"id": "1", "user_id": "1", "user_name": "Binh Nguyen", "comment": "comment for article 1", "parent_id": "", "create_at": "2014-02-22T19:20+00:00"},
+        {"id": "2", "user_id": "2", "user_name": "Binh 2 Nguyen", "comment": "comment for article 2", "parent_id": "1", "create_at": "2014-02-22T19:20+00:00"}
         ]
         
 ### Create a comment [POST]
 + Request (application/json)
 
-        {"token": "user token", "comment": "this is a comment", "parentCommentId": "1"}
+        {"token": "user token", "comment": "this is a comment", "parent_id": "1"}
 
 + Response 201 (application/json)
 
-        {"id": "1", "createAt": "2014-02-22T19:20+00:00"}
+        {"id": "1", "create_at": "2014-02-22T19:20+00:00"}
         
 ## Comment [/articles/{articleId}/comments/{commentId}]
 ### Delete a comment [DELETE]
@@ -165,11 +165,11 @@ The message can be in red or green, based on the feedback's status field. Right 
             "id": "1", 
             "type": "SINGLE_CHOICE" ,
             "question": "Question 1", 
-            "feedbackMessage" : [
-                { "id": "1", "optionIds": ["1", "2"], "message" : "This is a correct answer", "status" : "positive"},
-                { "id": "2", "optionIds": ["2"], "message" : "This is not a correct answer", "status" : "negative"}
+            "feedback_messages" : [
+                { "id": "1", "option_ids": ["1", "2"], "message" : "This is a correct answer", "status" : "positive"},
+                { "id": "2", "option_ids": ["2"], "message" : "This is not a correct answer", "status" : "negative"}
             ],
-            "optionList": [
+            "option_list": [
                 {"id": "1", "text": "text for quiz 1"},
                 {"id": "2", "text": "text for quiz 2"},
                 {"id": "3", "text": "text for quiz 3"}
@@ -179,7 +179,7 @@ The message can be in red or green, based on the feedback's status field. Right 
             "id", "2", 
             "type": "MULTI_CHOICE" ,
             "question": "Question 2", 
-            "optionList": [
+            "option_list": [
                 {"id": "4", "text": "text for quiz 1"},
                 {"id": "5", "text": "text for quiz 2"},
                 {"id": "6", "text": "text for quiz 3"},
@@ -220,11 +220,11 @@ The message can be in red or green, based on the feedback's status field. Right 
             "id": "1", 
             "type": "SINGLE_CHOICE" ,
             "question": "Question 1", 
-            "feedbackMessage" : [
-                {"optionIds": ["1", "2"], "message" : "This is not a correct answer", "status" : "positive"},
-                {"optionIds": ["2"], "message" : "This is not a correct answer", "status" : "negative"}
+            "feedback_messages" : [
+                {"option_ids": ["1", "2"], "message" : "This is not a correct answer", "status" : "positive"},
+                {"option_ids": ["2"], "message" : "This is not a correct answer", "status" : "negative"}
             ],
-            "optionList": [
+            "option_list": [
                 {"id": "1", "text": "text for quiz 1"},
                 {"id": "2", "text": "text for quiz 2"},
                 {"id": "3", "text": "text for quiz 3"}
@@ -234,7 +234,7 @@ The message can be in red or green, based on the feedback's status field. Right 
             "id", "2", 
             "type": "MULTI_CHOICE" ,
             "question": "Question 2", 
-            "optionList": [
+            "option_list": [
                 {"id": "4", "text": "text for quiz 1"},
                 {"id": "5", "text": "text for quiz 2"},
                 {"id": "6", "text": "text for quiz 3"},
@@ -283,50 +283,46 @@ Each event has 3 states: OPEN, ONGOING, CLOSED.
             "id": "1",
             "name": "event name 1",
             "thumb": "image link"
-            "startTime": "2014-02-20T19:20+00:00",
-            "endTime": "2014-02-22T19:20+00:00",
+            "start_time": "2014-02-20T19:20+00:00",
+            "end_time": "2014-02-22T19:20+00:00",
             "latitude": 10.000,
             "longitude": 104.001,
-            "address": "165, hai ba trung"
+            "address": "165, hai ba trung",
             "status": "OPEN",
             "joined": "false", /*this to identify whether the current user joint this event or not*/
             "attendee": 100,
-            "interestingCnt": 100,
-            "interestedCnt": 50
+            "interesting_count": 100,
+            "interested_count": 50
             },
             {
             "id": "2",
             "name": "event name 1 - event ongoing",
             "thumb": "image link"
-            "startTime": "2014-02-20T19:20+00:00",
-            "endTime": "2014-02-22T19:20+00:00",
-            "location" : {
-                "latitude": 10.000,
-                "longitude": 104.001,
-                "address": "165, hai ba trung"
-            },
+            "start_time": "2014-02-20T19:20+00:00",
+            "end_time": "2014-02-22T19:20+00:00",
+            "latitude": 10.000,
+            "longitude": 104.001,
+            "address": "165, hai ba trung",
             "status": "ONGOING",
             "joined": "false",
             "attendee": 100,
-            "interestingCnt": 100,
-            "interestedCnt": 50
+            "interesting_count": 100,
+            "interested_count": 50
             },
             {
             "id": "3",
             "name": "event name - user joined",
             "thumb": "image link"
-            "startTime": "2014-02-20T19:20+00:00",
-            "endTime": "2014-02-22T19:20+00:00",
-            "location" : {
-                "latitude": 10.000,
-                "longitude": 104.001,
-                "address": "165, hai ba trung"
-            },
+            "start_time": "2014-02-20T19:20+00:00",
+            "end_time": "2014-02-22T19:20+00:00",
+            "latitude": 10.000,
+            "longitude": 104.001,
+            "address": "165, hai ba trung",
             "status": "CLOSED",
             "joined": "true",
             "attendee": 100,
-            "interestingCnt": 100,
-            "interestedCnt": 50
+            "interesting_count": 100,
+            "interested_count": 50
             }
         ]
         
@@ -339,18 +335,16 @@ Each event has 3 states: OPEN, ONGOING, CLOSED.
             "detail": "event detail",
             "name": "event name - user joined",
             "thumb": "image link"
-            "startTime": "2014-02-20T19:20+00:00",
-            "endTime": "2014-02-22T19:20+00:00",
-            "location" : {
-                "latitude": 10.000,
-                "longitude": 104.001,
-                "address": "165, hai ba trung"
-            },
+            "start_time": "2014-02-20T19:20+00:00",
+            "end_time": "2014-02-22T19:20+00:00",
+            "latitude": 10.000,
+            "longitude": 104.001,
+            "address": "165, hai ba trung",
             "status": "CLOSED",
             "joined": "true",
             "attendee": 100,
-            "interestingCnt": 100,
-            "interestedCnt": 50
+            "interesting_count": 100,
+            "interested_count": 50
         }
         
 ## Event [/events/{eventId}/statistic]
@@ -361,8 +355,8 @@ Each event has 3 states: OPEN, ONGOING, CLOSED.
             "id": "1",
             "status": "CLOSED",
             "attendee": 100,
-            "interestingCnt": 100,
-            "interestedCnt": 50
+            "interesting_count": 100,
+            "interested_count": 50
         }
 
 ## Event's feedback [/events/{eventId}/feedback]
@@ -375,7 +369,7 @@ Option's type can be **INPUT** or **LABEL**
         {
             "question": "question for feedback",
             "type": "SINGLE_CHOICE",
-            "optionList": [
+            "option_list": [
                 {"id": "1", "type" : "INPUT", "text": "option 1"},
                 {"id": "2", "type" : "INPUT", "text": "option 2"},
                 {"id": "3","type" : "INPUT",  "text": "option 3"},
@@ -407,8 +401,8 @@ Option's type can be **INPUT** or **LABEL**
                 "title": "title",
                 "description": "discussion description",
                 "messages": [
-                    {"id": "1", "message": "message content 1", "userId": "1", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00", "parentId": ""},
-                    {"id": "2", "message": "message content 2", "userId": "2", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00", "parentId": ""},
+                    {"id": "1", "message": "message content 1", "user_id": "1", "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": ""},
+                    {"id": "2", "message": "message content 2", "user_id": "2", "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": ""},
                 ]
             },
             {
@@ -416,8 +410,8 @@ Option's type can be **INPUT** or **LABEL**
                 "title": "title",
                 "description": "discussion description",
                 "messages": [
-                    {"id": "1", "message": "message content 1", "userId": "1", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00", "parentId": ""},
-                    {"id": "2", "message": "message content 2", "userId": "2", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00", "parentId": ""},
+                    {"id": "1", "message": "message content 1", "user_id": "1", "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": ""},
+                    {"id": "2", "message": "message content 2", "user_id": "2", "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": ""},
                 ]
             }
         ]
@@ -443,10 +437,10 @@ Option's type can be **INPUT** or **LABEL**
         [
             {"id": "1", 
             "message": "message content 1", 
-            "userName": "user_name",
-            "userId": "1", 
-            "parentId": "",
-            "createAt": "2014-02-22T19:20+00:00"
+            "user_name": "user_name",
+            "user_id": "1", 
+            "parent_id": "",
+            "create_at": "2014-02-22T19:20+00:00"
             }
         ]
         
@@ -457,7 +451,7 @@ Option's type can be **INPUT** or **LABEL**
     
 + Response 201
 
-        {"id": "1", "createAt": "2014-02-22T19:20+00:00"}
+        {"id": "1", "create_at": "2014-02-22T19:20+00:00"}
         
 ## Message [/discussion/{discussionId}/messages/{messageId}]     
 ### Delete a message [DELETE]
@@ -474,11 +468,11 @@ Option's type can be **INPUT** or **LABEL**
 ### Login [POST]
 + Request (application/json)
     
-        {"userName": "user_name", "password": "md5_password"}
+        {"user_name": "user_name", "password": "md5_password"}
     
 + Response 200 (application/json)
 
-        {"userId": "user_id", "userType": "MEMBER", "userName": "user_name", "token": "user_token"}
+        {"user_id": "user_id", "user_type": "MEMBER", "user_name": "user_name", "token": "user_token"}
 
 ## Reset password [/resetpass]
 ### Reset password [POST]
@@ -492,7 +486,7 @@ Option's type can be **INPUT** or **LABEL**
 ### Change password [POST]
 + Request (application/json)
     
-        {"token": "user_token", "oldPassword": "raw_old_password", "newPassword": "md5_new_password"}
+        {"token": "user_token", "oldPassword": "md5_old_password", "newPassword": "md5_new_password"}
     
 + Response 204
 
@@ -504,32 +498,32 @@ Option's type can be **INPUT** or **LABEL**
 + Response 200 (application/json)
         
         [
-        {"userId": "user_id_1", "userType": "COACH", "userName": "user_name", 
-        "jobTitle": "job title", "organization": "organization", 
+        {"user_id": "user_id_1", "user_type": "COACH", "user_name": "user_name", 
+        "job_title": "job title", "organization": "organization", 
         "email": "email",
-        "registionDate": "2014-02-22T19:20+00:00", "interestedCnt": 100}, 
-        {"userId": "user_id_2", "userType": "COMMUNITY", "userName": "user_name", 
-        "jobTitle": "job title", "organization": "organization", 
+        "registion_date": "2014-02-22T19:20+00:00", "interested_count": 100}, 
+        {"user_id": "user_id_2", "user_type": "COMMUNITY", "user_name": "user_name", 
+        "job_title": "job title", "organization": "organization", 
         "email": "email",
-        "registionDate": "2014-02-22T19:20+00:00", "interestedCnt": 100}, 
+        "registion_date": "2014-02-22T19:20+00:00", "interested_count": 100}, 
         ]
 
-## User [/users/{userId}]
+## User [/users/{user_id}]
 ### Get user's detail [GET]
 + Response 200 (application/json)
 
         {
             "interested": "false",
-            "interestedCnt": 100,
+            "interested_count": 100,
             "summary": "summary",
-            "businessInterest": "Business interest",
+            "business_interest": "Business interest",
             "discussions":[
-                {"id": "1", "userId": "1", "createAt": "2014-02-22T19:20+00:00",
-                "type": "CREATE|ANSWER", "contentType": "DISCUSSION|COMMENT", "contentTitle": "content_title", "contentId": "content_id"}
+                {"id": "1", "user_id": "1", "create_at": "2014-02-22T19:20+00:00",
+                "type": "CREATE|ANSWER", "content_type": "DISCUSSION|COMMENT", "content_title": "content_title", "content_id": "content_id"}
             ],
             "recommendations": [
-                {"id": "1", "message": "message content 1", "userId": "1", "createAt": "2014-02-22T19:20+00:00"},
-                {"id": "2", "message": "message content 2", "userId": "2", "createAt": "2014-02-22T19:20+00:00"}
+                {"id": "1", "message": "message content 1", "user_id": "1", "create_at": "2014-02-22T19:20+00:00"},
+                {"id": "2", "message": "message content 2", "user_id": "2", "create_at": "2014-02-22T19:20+00:00"}
             ]
         }
 
@@ -538,16 +532,16 @@ Option's type can be **INPUT** or **LABEL**
         
         {
             "token": "user_token"
-            "jobTitle": "job title", 
+            "job_title": "job title", 
             "organization": "organization", 
             "email": "email",
             "summary": "summary",
-            "businessInterest": "Business interest"
+            "business_interest": "Business interest"
         }
         
 + Response 202
 
-## Update user avatar [/users/{userid}/avatar]
+## Update user avatar [/users/{user_id}/avatar]
 ### get user avatar [GET]
 
 + Response 200 (image/*)
@@ -556,7 +550,7 @@ Option's type can be **INPUT** or **LABEL**
 + Request (multipart/form-data)
 + Response 204
         
-## User's discussions [/users/{userId}/discussions/{?page}{?limit}]
+## User's discussions [/users/{user_id}/discussions/{?page}{?limit}]
 ### Get list all user discussions [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
@@ -564,11 +558,11 @@ Option's type can be **INPUT** or **LABEL**
 + Response 200 (application/json)
     
         [
-            {"id": "1", "userId": "1", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00",
-                "type": "CREATE|ANSWER", "contentType": "DISCUSSION|COMMENT", "contentTitle": "content_title", "contentId": "content_id"}
+            {"id": "1", "user_id": "1", "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00",
+                "type": "CREATE|ANSWER", "content_type": "DISCUSSION|COMMENT", "content_title": "content_title", "content_id": "content_id"}
         ]
         
-## User's recommendations [/users/{userId}/recommendations/{?page}{?limit}]
+## User's recommendations [/users/{user_id}/recommendations/{?page}{?limit}]
 ### Get list all user recommendations [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
@@ -576,11 +570,11 @@ Option's type can be **INPUT** or **LABEL**
 + Response 200 (application/json)
     
         [
-            {"id": "id", "message": "message content 1", "userId": "1", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00"},
-            {"id": "id", "message": "message content 2", "userId": "2", "userName": "user_name", "createAt": "2014-02-22T19:20+00:00"}
+            {"id": "id", "message": "message content 1", "user_id": "1", "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00"},
+            {"id": "id", "message": "message content 2", "user_id": "2", "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00"}
         ]
 
-## Recommendation [/users/{userId}/recommendations]         
+## Recommendation [/users/{user_id}/recommendations]         
 ### create/update a recommendation [POST]
 + Request (application/json)
 
@@ -588,7 +582,7 @@ Option's type can be **INPUT** or **LABEL**
 
 + Response 201 (application/json)
 
-        {"id": "id", "createAt": "2014-02-22T19:20+00:00"}
+        {"id": "id", "create_at": "2014-02-22T19:20+00:00"}
         
 ### Delete recommendation [DELETE]
 + Request (application/json)
@@ -597,23 +591,23 @@ Option's type can be **INPUT** or **LABEL**
 
 + Response 204
 
-## User's Action [/users/{userId}/action]
+## User's Action [/users/{user_id}/action]
 + Request (application/json)
 
-        {"token": "user_token", "actionType": "SHARE|FOLLOW|ATTEND|RATE", "relatedId": "id", "actionContent": "action_content"}
+        {"token": "user_token", "action_type": "SHARE|FOLLOW|ATTEND|RATE", "related_id": "id", "action_content": "action_content"}
         
 + Response 204
 
 # Group Notifications
 Notification will have 3 types: USER_ACTION, NEW_ARTICLE and NEW_EVENT.
-contentType: BLOG, LESSON, ARTICLE.
+content_type: BLOG, LESSON, ARTICLE.
 ## Notifications Collection [/notifications]
 ### Get list all notifications [GET]
 + Response 200 (applicaion/json)
 
         [
-            {"id", "type": "USER_ACTION", "contentId": "content_id", "contenTitle": "content_title", 
-            "createAt": "2014-02-22T19:20+00:00", "contentType": "BLOG"}, 
-            {"id", "type": "USER_ACTION", "contentId": "content_id", "contenTitle": "content_title", 
-            "createAt": "2014-02-22T19:20+00:00", "contentType": "LESSON"}
+            {"id", "type": "USER_ACTION", "content_id": "content_id", "conten_title": "content_title", 
+            "create_at": "2014-02-22T19:20+00:00", "content_type": "BLOG"}, 
+            {"id", "type": "USER_ACTION", "content_id": "content_id", "conten_title": "content_title", 
+            "create_at": "2014-02-22T19:20+00:00", "content_type": "LESSON"}
         ]
