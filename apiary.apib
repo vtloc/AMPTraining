@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 # AMP-epsilon
-All api datetime fomat (Timezone: +00:00): **YYYY-MM-DDThh:mmTZD**
+All api datetime format (Timezone: +00:00): **YYYY-MM-DDThh:mmTZD**
 
 For example: **2014-02-22T19:20+00:00**
 
@@ -264,6 +264,22 @@ The message can be in red or green, based on the feedback's status field. Right 
         ]
 
 + Response 202
+
+## Poll Statistic [/polls/{articleId}/statistic]
+### Get Poll statistic [GET]
++ Response 200
+    
+        {
+            "min": 0,
+            "max": 100,
+            "title": "Chart title",
+            "chart_data": [
+                {"lable": "1", "value": 20},
+                {"lable": "2", "value": 30},
+                {"lable": "3", "value": 40},
+                {"lable": "4", "value": 10},
+            ]
+        }
 
 # Group Events
 Each event has 3 states: OPEN, ONGOING, CLOSED.
