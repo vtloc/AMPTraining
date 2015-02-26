@@ -586,19 +586,20 @@ Option's type can be **INPUT** or **LABEL**
 + Response 200 (application/json)
     
         [
-            {"id": "id", "message": "message content 1", "user_id": "1", "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00"},
-            {"id": "id", "message": "message content 2", "user_id": "2", "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00"}
+            {"id": "id", "message": "message content 1", "isVisible": true, "user_id": "1", "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00"},
+            {"id": "id", "message": "message content 2", "isVisible": true, "user_id": "2", "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00"}
         ]
 
 ## Recommendation [/users/{user_id}/recommendations]         
 ### create/update a recommendation [POST]
+Just update field in json.
 + Request (application/json)
 
-        {"token": "user_token", "message": "message"}
+        {"token": "user_token", "message": "message", "isVisibile": true}
 
 + Response 201 (application/json)
 
-        {"id": "id", "create_at": "2014-02-22T19:20+00:00"}
+        {"id": "id", "create_at": "2014-02-22T19:20+00:00", "isVisible": true}
         
 ### Delete recommendation [DELETE]
 + Request (application/json)
