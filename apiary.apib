@@ -12,6 +12,7 @@ When a HTTP request return error, the HTTP status codes should be in follow list
 
 + Code **400**: all invalid data errors (ex: id is not existed)
 + Code **401**: user unauthorized or token expired.
++ Code **404**: data not found error.
 + Code **415**: Unsupported Media Type. This error will happen when user upload file is not an image.
 + Code **405**: all errors related to method synctax.
 + Code **500**: other error. This error should be attached a error message (ex: **{"error_message": "error message"}**).
