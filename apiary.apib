@@ -605,11 +605,11 @@ Option's type can be **INPUT** or **LABEL**
 Just update field in json.
 + Request (application/json)
 
-        {"token": "user_token", "message": "message", "isVisibile": true}
+        {"token": "user_token", "message": "message"}
 
 + Response 201 (application/json)
 
-        {"id": "id", "create_at": "2014-02-22T19:20+00:00", "isVisible": true}
+        {"id": "id", "create_at": "2014-02-22T19:20+00:00"}
         
 ### Delete recommendation [DELETE]
 + Request (application/json)
@@ -619,7 +619,7 @@ Just update field in json.
 + Response 204
 
 ## Group User's Action [/users/action]
-Types of user action: SHARE, FOLLOW/UNFOLLOW(other user), RATE, ATTENDANT(event).
+Types of user action: SHARE, FOLLOW/UNFOLLOW(other user), RATE, ATTENDANT(event), HIDE/SHOW recommendation.
 ### Create a user action [POST]
 + Request (application/json)
 
