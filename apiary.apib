@@ -441,19 +441,6 @@ Option's type can be **INPUT** or **LABEL**
                 ]
             }
         ]
-        
-## Group User's Action [/users/action]
-Types of user action: SHARE, FOLLOW/UNFOLLOW(other user), RATE, ATTENDANT(event).
-### Create a user action [POST]
-+ Request (application/json)
-
-        {
-            "token": "user_token",
-            "type": "SHARE",
-            "content_id": "content_id",
-            "content_value": ""
-        }
-+ Response 204
        
 ## Discussions Collection [/discussions]
 ### Create new Discussion thread [POST]
@@ -631,11 +618,17 @@ Just update field in json.
 
 + Response 204
 
-## User's Action [/users/{user_id}/action]
+## Group User's Action [/users/action]
+Types of user action: SHARE, FOLLOW/UNFOLLOW(other user), RATE, ATTENDANT(event).
+### Create a user action [POST]
 + Request (application/json)
 
-        {"token": "user_token", "action_type": "SHARE|FOLLOW|ATTEND|RATE", "related_id": "id", "action_content": "action_content"}
-        
+        {
+            "token": "user_token",
+            "type": "SHARE",
+            "content_id": "content_id",
+            "content_value": ""
+        }
 + Response 204
 
 # Group Notifications
