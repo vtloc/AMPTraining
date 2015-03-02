@@ -132,7 +132,7 @@ When a HTTP request return error, the HTTP status codes should be in follow list
 
         {"token": "user token", "comment": "this is a comment", "parent_id": "1"}
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
         {"id": "1", "create_at": "2014-02-22T19:20+00:00"}
         
@@ -145,7 +145,7 @@ When a HTTP request return error, the HTTP status codes should be in follow list
     
         {"token": "user token"}
         
-+ Response 204
++ Response 200
 
 # Group Quiz
 Every question of a Quiz or a Poll has 2 type: SINGLE_CHOICE and MULTI_CHOICE.
@@ -218,7 +218,7 @@ The message can be in red or green, based on the feedback's status field. Right 
             }
         ]
 
-+ Response 204
++ Response 200
 
 # Group Polls
 ## Poll [/polls/{articleId}]
@@ -273,7 +273,7 @@ The message can be in red or green, based on the feedback's status field. Right 
             }
         ]
 
-+ Response 202
++ Response 200
 
 ## Poll Statistic [/polls/{articleId}/statistic]
 ### Get Poll statistic [GET]
@@ -404,7 +404,7 @@ Option's type can be **INPUT** or **LABEL**
         
 ## Event's feedback submit [/events/{eventId}/feedback/submit]
 ### Submit event's feedback [POST]
-+ Response 202 (application/json)
++ Response 200 (application/json)
 
         [ 
         { "id" : "1" },
@@ -448,7 +448,7 @@ Option's type can be **INPUT** or **LABEL**
 
         {"token": "user_token", "title": "Discussion title", "description": "description"}
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
         
         {"id": "1"}
 
@@ -475,7 +475,7 @@ Option's type can be **INPUT** or **LABEL**
 
         {"token": "user_token", "message": "message"}
     
-+ Response 201
++ Response 200
 
         {"id": "1", "create_at": "2014-02-22T19:20+00:00"}
         
@@ -485,7 +485,7 @@ Option's type can be **INPUT** or **LABEL**
 
         {"token": "user_token"}
     
-+ Response 204
++ Response 200
 
 # Group Users
 3 types (MEMBER, COACH, COMMUNITY)
@@ -506,7 +506,7 @@ Option's type can be **INPUT** or **LABEL**
     
         {"email": "user_email"}
     
-+ Response 204
++ Response 200
 
 ## Change password [/changepass]
 ### Change password [POST]
@@ -514,7 +514,7 @@ Option's type can be **INPUT** or **LABEL**
     
         {"token": "user_token", "oldPassword": "md5_old_password", "newPassword": "md5_new_password"}
     
-+ Response 204
++ Response 200
 
 ## Users Collection [/users/{?page}{?limit}]
 ### Get list Contacts [GET]
@@ -565,7 +565,7 @@ Option's type can be **INPUT** or **LABEL**
             "business_interest": "Business interest"
         }
         
-+ Response 202
++ Response 200
 
 ## Update user avatar [/users/{user_id}/avatar]
 ### get user avatar [GET]
@@ -574,7 +574,7 @@ Option's type can be **INPUT** or **LABEL**
 
 ### Update user avatar [POST]
 + Request (multipart/form-data)
-+ Response 204
++ Response 200
         
 ## User's discussions [/users/{user_id}/discussions/{?page}{?limit}]
 ### Get list all user discussions [GET]
@@ -607,7 +607,7 @@ Just update field in json.
 
         {"token": "user_token", "message": "message"}
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
         {"id": "id", "create_at": "2014-02-22T19:20+00:00"}
         
@@ -616,7 +616,7 @@ Just update field in json.
 
         {"token": "user_token"}
 
-+ Response 204
++ Response 200
 
 ## Group User's Action [/users/action]
 Types of user action: SHARE, FOLLOW/UNFOLLOW(other user), RATE, ATTENDANT(event), HIDE/SHOW recommendation.
@@ -630,7 +630,7 @@ Types of user action: SHARE, FOLLOW/UNFOLLOW(other user), RATE, ATTENDANT(event)
             "content_type": "ARTICLE",
             "content_value": ""
         }
-+ Response 204
++ Response 200
 
 # Group Notifications
 Notification will have 3 types: USER_ACTION, NEW_ARTICLE and NEW_EVENT.
