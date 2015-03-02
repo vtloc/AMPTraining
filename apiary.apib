@@ -7,6 +7,17 @@ For example: **2014-02-22T19:20+00:00**
 
 AMP platform will support the following API:
 
+# Group API Authentication
+To make requests to api, you will need to set an authorization header:
+
++ Basic authentication for public resources: 
+
+    **Authorization: Basic {base 64 encoded string of "##apollo2015##" string}**
+
++ JSON Web Token Authentication for protected resources:
+
+    **Authorization: Bearer {yourtokenhere}**
+
 # Group HTTP Status Codes
 When a HTTP request return error, the HTTP status codes should be in follow list:
 
@@ -14,7 +25,43 @@ When a HTTP request return error, the HTTP status codes should be in follow list
 + Code **404**: data not found error.
 + Code **415**: Unsupported Media Type. This error will happen when user upload file is not an image.
 + Code **405**: all errors related to method synctax.
-+ Code **500**: other error. This error should be attached a error message (ex: **{"error_message": "error message"}**).
++ Code **500**: other error. This error should be attached a error message (ex: **{"message": "error message"}**).
+
+# Group HTTP JSON Reponse
+Response template:
+
+    {
+        "message": "...", // General message | String
+        "errors": "...",  // Error details | Json
+        "data": "..."     // Reponse data | Json/ArrayOfJson
+    }
+    
+Ex with errors:
+
+    {
+        "message": "Could not create new user.",
+        "errors": {
+            "username": [
+                "The username field is required."
+            ],
+            "password": [
+                "The password field is required."
+            ]
+        },
+        "data": " "
+    }
+    
+Ex without errors:
+
+    {
+        "message": "User has been created.",
+        "errors": " ",
+        "data": {
+            "id": "1", 
+            "name": "Loc"
+        }
+    }
+    
 
 # Group Tags
 ## Tags Collection [/articles/tags]
