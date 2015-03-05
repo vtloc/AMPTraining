@@ -82,7 +82,7 @@ Ex without errors:
     
 + Response 200 (application/json)
 
-        [
+        {"error": 200, "data": [
         {
         "id": "1", 
         "title": "title 1", 
@@ -93,10 +93,10 @@ Ex without errors:
         "rating": 3.5, 
         "rating_count": 120,
         "cmt_count": 100, 
-        "create_at": "2014-02-23T19:20+00:00"
+        "create_at": "2014-02-23T19:20+00:00",
         "tags": [
             {"id": 2, "name": "computer"}
-        ]},
+        ],
         {
         "id": "1", 
         "title": "title 1", 
@@ -107,10 +107,10 @@ Ex without errors:
         "rating": 3.5, 
         "rating_count": 120,
         "cmt_count": 100, 
-        "create_at": "2014-02-23T15:20+00:00"
+        "create_at": "2014-02-23T15:20+00:00",
         "tags": [
             {"id": 2, "name": "computer"}
-        ]},
+        ],
         {
         "id": "1", 
         "title": "title 1", 
@@ -121,11 +121,11 @@ Ex without errors:
         "rating": 3.5, 
         "rating_count": 120,
         "cmt_count": 100, 
-        "create_at": "2014-02-22T19:20+00:00"
+        "create_at": "2014-02-22T19:20+00:00",
         "tags": [
             {"id": 2, "name": "computer"}
-        ]},
-        ]
+        ],
+        ]}
 
 ## Article [/articles/{articleId}]
 ### Get Article Detail [GET]
@@ -540,11 +540,11 @@ Option's type can be **INPUT** or **LABEL**
 ### Login [POST]
 + Request (application/json)
     
-        {"username": "user_name", "password": "password"}
+        {"user_name": "user_name", "password": "md5_password"}
     
 + Response 200 (application/json)
 
-        {"error":200, "data":{"id": "user_id", "type_id": "1", "username": "username", "token": "user_token"}}
+        {"error":200, "data":{"user_id": "user_id", "user_type": "MEMBER", "user_name": "user_name", "token": "user_token", "expiration": 6600000}}
 
 ## Reset password [/resetpass]
 ### Reset password [POST]
@@ -570,14 +570,14 @@ Option's type can be **INPUT** or **LABEL**
 + Response 200 (application/json)
         
         [
-        {"id": "user_id_1", "type_id": "1", "username": "user_name", 
+        {"user_id": "user_id_1", "user_type": "COACH", "user_name": "user_name", 
         "job_title": "job title", "organization": "organization", 
         "email": "email",
         "registion_date": "2014-02-22T19:20+00:00", "interested_count": 100}, 
-        {"id": "user_id_2", "type_id": "2", "username": "user_name", 
+        {"user_id": "user_id_2", "user_type": "COMMUNITY", "user_name": "user_name", 
         "job_title": "job title", "organization": "organization", 
         "email": "email",
-        "created_at": "2014-02-22T19:20+00:00", "interested_count": 100}, 
+        "registion_date": "2014-02-22T19:20+00:00", "interested_count": 100}, 
         ]
 
 ## User [/users/{user_id}]
