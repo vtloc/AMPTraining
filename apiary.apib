@@ -585,14 +585,7 @@ Option's type can be **INPUT** or **LABEL**
         
         {
             "message": "",
-            "data": {
-                "total": 3,
-                "per_page": 10,
-                "current_page": 1, 
-                "last_page": 1,
-                "from": 1,
-                "to": 3,
-                "data": [
+            "data": [
                     {
                         "id": 3, 
                         "type_id": 4, 
@@ -639,8 +632,16 @@ Option's type can be **INPUT** or **LABEL**
                         "interested_count": 100
                     }
                 ]
-            },
-            "errors": ""
+            ,
+            "errors": "",
+            "extend_data":{
+                "total": 3,
+                "per_page": 10,
+                "current_page": 1, 
+                "last_page": 1,
+                "from": 1,
+                "to": 3
+            }
         }
 
 ## User [/users/{user_id}]
