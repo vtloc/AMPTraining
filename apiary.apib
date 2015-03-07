@@ -540,11 +540,22 @@ Option's type can be **INPUT** or **LABEL**
 ### Login [POST]
 + Request (application/json)
     
-        {"user_name": "user_name", "password": "md5_password"}
+        {"username": "username", "password": "password"}
     
 + Response 200 (application/json)
 
-        {"errors":null, "message":"", "data":{"user_id": "user_id", "user_type": "MEMBER", "user_name": "user_name", "token": "user_token", "expiration": 6600000}}
+        {
+            "errors":null, 
+            "message":"", 
+            "data":{
+                "id": "user_id"
+                "type_id": "2", 
+                "status": "1",
+                "username": "username", 
+                "token": "access token", 
+                "expiry_in": 20160 // minutes (About 2 weeks)
+            }
+        }
 
 ## Reset password [/resetpass]
 ### Reset password [POST]
@@ -558,7 +569,7 @@ Option's type can be **INPUT** or **LABEL**
 ### Change password [POST]
 + Request (application/json)
     
-        {"token": "user_token", "oldPassword": "md5_old_password", "newPassword": "md5_new_password"}
+        {"old_password": "old_password", "new_password": "new_password"}
     
 + Response 200
 
@@ -569,41 +580,71 @@ Option's type can be **INPUT** or **LABEL**
     + limit (optional, number, `10` ) ... Default value: 10]
 + Response 200 (application/json)
         
-        [
-        {"user_id": "user_id_1", "user_type": "COACH", "user_name": "user_name", 
-        "job_title": "job title", "organization": "organization", 
-        "email": "email",
-        "registion_date": "2014-02-22T19:20+00:00", "interested_count": 100}, 
-        {"user_id": "user_id_2", "user_type": "COMMUNITY", "user_name": "user_name", 
-        "job_title": "job title", "organization": "organization", 
-        "email": "email",
-        "registion_date": "2014-02-22T19:20+00:00", "interested_count": 100}, 
-        ]
+        {
+            "message": "",
+            "errors": null,
+            "data": [
+                {
+                    "id": 3, 
+                    "type_id": 4, // 1:admin, 2:coach, 3:community, 4:member
+                    "status_id": 1, // 1:active, 2: inactive
+                    "gender": 1, // 1:male, 2: female
+                    "username": "user_name", 
+                    "email": "email",
+                    "first_name": "First name",
+                    "last_name": "Last name",
+                    "name_title": "Mr", // Mr/Mrs/Prof/Dr
+                    "job_title": "job title", 
+                    "organization": "organization", 
+                    "created_at": "2014-02-22T19:20+00:00", 
+                    "interested_count": 100
+                },
+                {...}
+            ],
+        }
 
 ## User [/users/{user_id}]
 ### Get user's detail [GET]
 + Response 200 (application/json)
 
         {
-            "interested": "false",
-            "interested_count": 100,
-            "summary": "summary",
-            "business_interest": "Business interest",
-            "discussions":[
-                {"id": "1", "user_id": "1", "create_at": "2014-02-22T19:20+00:00",
-                "type": "CREATE|ANSWER", "content_type": "DISCUSSION|COMMENT", "content_title": "content_title", "content_id": "content_id"}
-            ],
-            "recommendations": [
-                {"id": "1", "message": "message content 1", "user_id": "1", "create_at": "2014-02-22T19:20+00:00"},
-                {"id": "2", "message": "message content 2", "user_id": "2", "create_at": "2014-02-22T19:20+00:00"}
-            ]
+            "message": "",
+            "data": {
+                "id": 3, 
+                "type_id": 4, // 1:admin, 2:coach, 3:community, 4:member
+                "status_id": 1, // 1:active, 2: inactive
+                "gender": 1, // 1:male, 2: female
+                "username": "user_name", 
+                "email": "email",
+                "first_name": "First name",
+                "last_name": "Last name",
+                "name_title": "Mr", // Mr/Mrs/Prof/Dr
+                "job_title": "job title", 
+                "organization": "organization", 
+                "created_at": "2014-02-22T19:20+00:00", 
+                "interested": "false",
+                "interested_count": 100,
+                "summary": "summary",
+                "business_interest": "Business interest",
+                "discussions":[
+                    {"id": "1", "user_id": "1", "created_at": "2014-02-22T19:20+00:00",
+                    "type": "CREATE|ANSWER", "content_type": "DISCUSSION|COMMENT", "content_title": "content_title", "content_id": "content_id"}
+                ],
+                "recommendations": [
+                    {"id": "1", "message": "message content 1", "user_id": "1", "created_at": "2014-02-22T19:20+00:00"},
+                    {"id": "2", "message": "message content 2", "user_id": "2", "created_at": "2014-02-22T19:20+00:00"}
+                ]
+            },
+            "errors": ""
         }
 
 ### Edit user's information [POST]
 + Request (application/json)
         
         {
-            "token": "user_token"
+            "first_name": "",
+            "last_name": "",
+            "gender": "",
             "job_title": "job title", 
             "organization": "organization", 
             "email": "email",
