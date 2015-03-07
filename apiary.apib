@@ -71,12 +71,12 @@ Ex without errors:
         [{"id": "1", "name": "mobile"}, {"id": "2", "name": "computer"}]
 
 # Group Articles
-## Articles Collection [/articles/{?type}{?page}{?per_page}{?sort}{?filter}]
+## Articles Collection [/articles/{?type}{?page}{?limit}{?sort}{?filter}]
 ### List all articles [GET]
 + Parameters
     + type (required, String, `1` ) ... type of article. 1: Article, 2: Blog, 3: Lesson.
     + page (optional, number, `1` ) ... Default value: 1
-    + per_page (optional, number, `10` ) ... Default value: 10
+    + limit (optional, number, `10` ) ... Default value: 10
     + sort (optional, number, `1` ) ... sort type of list. 1: Newest (last 48 hours), 2: Rating: low to high, 3: Rating: high to low.
     + filter (optional, string, `mobile,pc` ) ... List of filter tag's IDs.
     
@@ -340,11 +340,11 @@ The message can be in red or green, based on the feedback's status field. Right 
 # Group Events
 Each event has 3 states: OPEN, ONGOING, CLOSED.
 
-## Events Collection [/events/{?page}{?per_page}{?sort}{?filter}]
+## Events Collection [/events/{?page}{?limit}{?sort}{?filter}]
 ### List all Events [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
-    + per_page (optional, number, `10` ) ... Default value: 10
+    + limit (optional, number, `10` ) ... Default value: 10
     + sort (optional, number, `1` ) ... sort type of list. 1: Newest (last 48 hours), 2: Attendant: low to high, 3: Attendant: high to low.
     + filter (optional, string, `mobile,pc` ) ... List of filter tag's IDs.
 
@@ -459,10 +459,10 @@ Option's type can be **INPUT** or **LABEL**
         ]
         
 # Group Discussions
-## Discussions Collection [/discussions/{?page}{?per_page}]
+## Discussions Collection [/discussions/{?page}{?limit}]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
-    + per_page (optional, number, `10` ) ... Default value: 10
+    + limit (optional, number, `10` ) ... Default value: 10
     
 ### Get all Discussions with 2 latest messages [GET]
 + Response 200 (application/json)
@@ -498,11 +498,11 @@ Option's type can be **INPUT** or **LABEL**
         
         {"id": "1"}
 
-## Discussion [/discussion/{discussionId}/messages/{?page}{?per_page}]
+## Discussion [/discussion/{discussionId}/messages/{?page}{?limit}]
 ### Get list messages [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
-    + per_page (optional, number, `10` ) ... Default value: 10
+    + limit (optional, number, `10` ) ... Default value: 10
 
 + Response 200 (application/json)
 
@@ -548,7 +548,7 @@ Option's type can be **INPUT** or **LABEL**
             "errors":null, 
             "message":"", 
             "data":{
-                "id": "user_id"
+                "id": "user_id",
                 "type_id": 2, 
                 "status_id": 1,
                 "username": "username", 
@@ -573,11 +573,11 @@ Option's type can be **INPUT** or **LABEL**
     
 + Response 200
 
-## Users Collection [/users/{?page}{?per_page}{?name}]
+## Users Collection [/users/{?page}{?limit}{?name}]
 ### Get list Contacts [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
-    + per_page (optional, number, `10` ) ... Default value: 10
+    + limit (optional, number, `10` ) ... Default value: 10
     + name (optional, string, `loc` ) ... 
 + Response 200 (application/json)
         
@@ -673,11 +673,11 @@ Option's type can be **INPUT** or **LABEL**
 + Request (multipart/form-data)
 + Response 200
         
-## User's discussions [/users/{user_id}/discussions/{?page}{?per_page}]
+## User's discussions [/users/{user_id}/discussions/{?page}{?limit}]
 ### Get list all user discussions [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
-    + per_page (optional, number, `10` ) ... Default value: 10
+    + limit (optional, number, `10` ) ... Default value: 10
 + Response 200 (application/json)
     
         [
@@ -685,11 +685,11 @@ Option's type can be **INPUT** or **LABEL**
                 "type": "CREATE|ANSWER", "content_type": "DISCUSSION|COMMENT", "content_title": "content_title", "content_id": "content_id"}
         ]
         
-## User's recommendations [/users/{user_id}/recommendations/{?page}{?per_page}]
+## User's recommendations [/users/{user_id}/recommendations/{?page}{?limit}]
 ### Get list all user recommendations [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
-    + per_page (optional, number, `10` ) ... Default value: 10
+    + limit (optional, number, `10` ) ... Default value: 10
 + Response 200 (application/json)
     
         [
