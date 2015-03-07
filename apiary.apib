@@ -33,7 +33,8 @@ Response template:
     {
         "message": "...", // General message | String
         "errors": "...",  // Error details | Json
-        "data": "..."     // Reponse data | Json/ArrayOfJson
+        "data": "..." ,    // Reponse data | Json/ArrayOfJson
+        "extend_data": "..."// Reponse data | Json/ArrayOfJson
     }
     
 Ex with errors:
@@ -48,7 +49,8 @@ Ex with errors:
                 "The password field is required."
             ]
         },
-        "data": " "
+        "data": " ",
+        "extend_data": ""
     }
     
 Ex without errors:
@@ -125,7 +127,7 @@ Ex without errors:
         "tags": [
             {"id": 2, "name": "computer"}
         ]}
-        ]}
+        ],"extend_data":{}}
 
 ## Article [/articles/{articleId}]
 ### Get Article Detail [GET]
