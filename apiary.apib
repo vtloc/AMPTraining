@@ -80,14 +80,15 @@ Ex without errors:
         }
 
 # Group Articles
-## Articles Collection [/articles/{?type}{?page}{?per_page}{?sort}{?filter}]
+## Articles Collection [/articles/{?type}{?page}{?per_page}{?sort}{?order}{?tag_id}]
 ### List all articles [GET]
 + Parameters
     + type (required, String, `1` ) ... type of article. 1: Article, 2: Blog, 3: Lesson.
     + page (optional, number, `1` ) ... Default value: 1
     + per_page (optional, number, `10` ) ... Default value: 10
-    + sort (optional, number, `1` ) ... sort type of list. 1: Newest (last 48 hours), 2: Rating: low to high, 3: Rating: high to low.
-    + filter (optional, string, `mobile,pc` ) ... List of filter tag's IDs.
+    + sort (optional, string, `title` ) ... sort by field name. Ex: id, title, created_at
+    + order (optional, string, `desc` ) ... Sort direction. Only allow 'desc|asc'
+    + tag_id (optional, string, `mobile,pc` ) ... List of filter tag's id.
     
 + Response 200 (application/json)
 
