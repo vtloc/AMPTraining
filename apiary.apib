@@ -70,7 +70,14 @@ Ex without errors:
 ### List all article tags [GET]
 + Response 200 (application/json)
 
-        [{"id": "1", "name": "mobile"}, {"id": "2", "name": "computer"}]
+        {
+            "message": null,
+            "errors": null,
+            "data": [
+                {"id": "1", "name": "mobile"}, 
+                {"id": "2", "name": "computer"}
+            ]
+        }
 
 # Group Articles
 ## Articles Collection [/articles/{?type}{?page}{?per_page}{?sort}{?filter}]
@@ -84,50 +91,65 @@ Ex without errors:
     
 + Response 200 (application/json)
 
-        {"error": null, "message": "", "data": [
         {
-        "id": "1", 
-        "title": "title 1", 
-        "summary": "summary 1", 
-        "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
-        "share_count": 100, 
-        "view_count": 120, 
-        "rating": 3.5, 
-        "rating_count": 120,
-        "cmt_count": 100, 
-        "create_at": "2014-02-23T19:20+00:00",
-        "tags": [
-            {"id": 2, "name": "computer"}
-        ]},
-        {
-        "id": "1", 
-        "title": "title 1", 
-        "summary": "summary 1", 
-        "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
-        "share_count": 100, 
-        "view_count": 120, 
-        "rating": 3.5, 
-        "rating_count": 120,
-        "cmt_count": 100, 
-        "create_at": "2014-02-23T15:20+00:00",
-        "tags": [
-            {"id": 2, "name": "computer"}
-        ]},
-        {
-        "id": "1", 
-        "title": "title 1", 
-        "summary": "summary 1", 
-        "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
-        "share_count": 100, 
-        "view_count": 120, 
-        "rating": 3.5, 
-        "rating_count": 120,
-        "cmt_count": 100, 
-        "create_at": "2014-02-22T19:20+00:00",
-        "tags": [
-            {"id": 2, "name": "computer"}
-        ]}
-        ],"extend_data":{}}
+            "error": null, 
+            "message": null, 
+            "data": [
+                {
+                    "id": "1", 
+                    "title": "title 1", 
+                    "summary": "summary 1", 
+                    "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
+                    "share_count": 100, 
+                    "view_count": 120, 
+                    "rating_average": 3.5, 
+                    "rating_count": 120,
+                    "comment_count": 100, 
+                    "created_at": "2014-02-23T19:20+00:00",
+                    "tags": [
+                        {"id": 2, "name": "computer"}
+                    ]
+                },
+                {
+                    "id": "1", 
+                    "title": "title 1", 
+                    "summary": "summary 1", 
+                    "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
+                    "share_count": 100, 
+                    "view_count": 120, 
+                    "rating_average": 3.5, 
+                    "rating_count": 120,
+                    "comment_count": 100, 
+                    "created_at": "2014-02-23T15:20+00:00",
+                    "tags": [
+                        {"id": 2, "name": "computer"}
+                    ]
+                },
+                {
+                    "id": "1", 
+                    "title": "title 1", 
+                    "summary": "summary 1", 
+                    "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
+                    "share_count": 100, 
+                    "view_count": 120, 
+                    "rating": 3.5, 
+                    "rating_count": 120,
+                    "comment_count": 100, 
+                    "created_at": "2014-02-22T19:20+00:00",
+                    "tags": [
+                        {"id": 2, "name": "computer"}
+                    ]
+                }
+            ],
+            "extend_data":{
+                "total": 4,
+                "per_page": 10,
+                "current_page": 1,
+                "last_page": 1,
+                "from": 1,
+                "to": 4,
+            }
+        }
 
 ## Article [/articles/{articleId}]
 ### Get Article Detail [GET]
