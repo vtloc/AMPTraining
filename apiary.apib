@@ -266,7 +266,14 @@ Ex without errors:
 
 + Response 200 (application/json)
 
-        {"id": "1", "create_at": "2014-02-22T19:20+00:00"}
+        {
+            "message": "Comment {id} has been created",
+            "errors": null,
+            "data": {
+                "id": 2, 
+                "created_at": "2014-02-22T19:20+00:00"
+            }
+        }
         
 ## Comment [/articles/{articleId}/comments/{commentId}]
 ### Delete a comment [DELETE]
