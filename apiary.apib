@@ -708,7 +708,8 @@ Option's type can be **INPUT** or **LABEL**
                         "job_title": "job title", 
                         "organization": "organization", 
                         "created_at": "2014-02-22T19:20+00:00", 
-                        "interested_count": 100
+                        "interested_count": 100,
+                        "recommended_count": 100    
                     },
                     {
                         "id": 2, 
@@ -723,7 +724,8 @@ Option's type can be **INPUT** or **LABEL**
                         "job_title": "job title", 
                         "organization": "organization", 
                         "created_at": "2014-02-22T19:20+00:00", 
-                        "interested_count": 100
+                        "interested_count": 100,
+                        "recommended_count": 100
                     },
                     {
                         "id": 1, 
@@ -738,7 +740,8 @@ Option's type can be **INPUT** or **LABEL**
                         "job_title": "job title", 
                         "organization": "organization", 
                         "created_at": "2014-02-22T19:20+00:00", 
-                        "interested_count": 100
+                        "interested_count": 100,
+                        "recommended_count": 100
                     }
                 ]
             ,
@@ -830,6 +833,11 @@ Option's type can be **INPUT** or **LABEL**
 
 ### Update user avatar [POST]
 + Request (multipart/form-data)
+
+        {
+            "avatar": ""
+        }
+        
 + Response 200
         
 ## User's discussion histories [/users/{user_id}/discussion_histories/{?page}{?per_page}{?sort}{?order}]
@@ -897,7 +905,7 @@ Option's type can be **INPUT** or **LABEL**
                     "id": 1, 
                     "message": "message content 1", 
                     "is_visible": true,
-                    "created_by_users": {
+                    "created_by_user": {
                         "id": 3, 
                         "type_id": 4, 
                         "status_id": 1,
@@ -915,7 +923,7 @@ Option's type can be **INPUT** or **LABEL**
                     "id": 2, 
                     "message": "message content 2", 
                     "is_visible": true,
-                    "created_by_users": {
+                    "created_by_user": {
                         "id": 3, 
                         "type_id": 4, 
                         "status_id": 1,
