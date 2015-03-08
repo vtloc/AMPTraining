@@ -34,7 +34,7 @@ Response template:
         "message": "...", // General message | String
         "errors": "...",  // Error details | Json
         "data": "..." ,    // Reponse data | Json/ArrayOfJson
-        "extend_data": "..."// Reponse data | Json/ArrayOfJson
+        "extra_data": "..."// Reponse data | Json/ArrayOfJson
     }
     
 Ex with errors:
@@ -50,7 +50,7 @@ Ex with errors:
             ]
         },
         "data": " ",
-        "extend_data": ""
+        "extra_data": ""
     }
     
 Ex without errors:
@@ -106,6 +106,7 @@ Ex without errors:
                     "rating_average": 3.5, 
                     "rating_count": 120,
                     "comment_count": 100, 
+                    "type_id": 1,
                     "created_at": "2014-02-23T19:20+00:00",
                     "tags": [
                         {"id": 2, "name": "computer"}
@@ -121,6 +122,7 @@ Ex without errors:
                     "rating_average": 3.5, 
                     "rating_count": 120,
                     "comment_count": 100, 
+                    "type_id": 1,
                     "created_at": "2014-02-23T15:20+00:00",
                     "tags": [
                         {"id": 2, "name": "computer"}
@@ -133,8 +135,9 @@ Ex without errors:
                     "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
                     "share_count": 100, 
                     "view_count": 120, 
-                    "rating": 3.5, 
+                    "rating_average": 3.5, 
                     "rating_count": 120,
+                    "type_id": 1,
                     "comment_count": 100, 
                     "created_at": "2014-02-22T19:20+00:00",
                     "tags": [
@@ -142,7 +145,7 @@ Ex without errors:
                     ]
                 }
             ],
-            "extend_data":{
+            "extra_data":{
                 "total": 4,
                 "per_page": 10,
                 "current_page": 1,
@@ -159,15 +162,30 @@ Ex without errors:
 + Response 200 (application/json)
 
         {
-        "id": "1",
-        "content": "html content",
-        "share_count": 100, 
-        "view_count": 120, 
-        "rating": 3.5, 
-        "rating_count": 120,
-        "cmt_count": 100,
-        "has_quiz": true,
-        "has_poll": true
+            "message": null,
+            "errors": null,
+            "data": [
+                {
+                    "id": 1,
+                    "title" "title",
+                    "summary": "summary 1",
+                    "content": "html content",
+                    "share_count": 100, 
+                    "view_count": 120, 
+                    "rating_aveerage": 3.5, 
+                    "rating_count": 120,
+                    "comment_count": 100,
+                    "type_id": 1,
+                    "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg", 
+                    "created_by": 1,
+                    "created_at": "2014-02-22T19:20+00:00",
+                    "tags": [
+                        {"id": 2, "name": "computer"}
+                    ],
+                    "has_quiz": true,
+                    "has_poll": true
+                }
+            ]
         }
 
 ## Article [/articles/{articleId}/statistic]
@@ -177,12 +195,16 @@ Ex without errors:
 + Response 200 (application/json)
 
         {
-        "id": "1",
-        "share_count": 100, 
-        "view_count": 120, 
-        "rating": 3.5, 
-        "rating_count": 120,
-        "cmt_count": 100
+            "message": null,
+            "errors": null,
+            "data": {
+                "id": "1",
+                "share_count": 100, 
+                "view_count": 120, 
+                "rating_average": 3.5, 
+                "rating_count": 120,
+                "cmt_count": 100
+            }
         }
 
         
@@ -193,15 +215,54 @@ Ex without errors:
     + articleId (required, string) ... ID of article.
 + Response 200 (application/json)
 
-        [
-        {"id": "1", "user_id": "1", "user_name": "Binh Nguyen", "comment": "comment for article 1", "parent_id": "", "create_at": "2014-02-22T19:20+00:00"},
-        {"id": "2", "user_id": "2", "user_name": "Binh 2 Nguyen", "comment": "comment for article 2", "parent_id": "1", "create_at": "2014-02-22T19:20+00:00"}
-        ]
+        {
+            "message": null,
+            "erros": null,
+            "data": [
+                {
+                    "id": 1, 
+                    "content": "comment for article 1", 
+                    "parent_id": "", 
+                    "created_at": "2014-02-22T19:20+00:00",
+                    "created_by_user": {
+                        "id": 3, 
+                        "type_id": 4, 
+                        "status_id": 1,
+                        "gender": 1, 
+                        "username": "user_name", 
+                        "email": "email",
+                        "first_name": "First name",
+                        "last_name": "Last name",
+                        "name_title": "Mr",
+                        "job_title": "job title"
+                    }
+                },
+                {
+                    "id": 2, 
+                    "content": "comment for article 1", 
+                    "parent_id": "", 
+                    "created_at": "2014-02-22T19:20+00:00",
+                    "created_by_user": {
+                        "id": 3, 
+                        "type_id": 4, 
+                        "status_id": 1,
+                        "gender": 1, 
+                        "username": "user_name", 
+                        "email": "email",
+                        "first_name": "First name",
+                        "last_name": "Last name",
+                        "name_title": "Mr",
+                        "job_title": "job title"
+                    }
+                },
+                
+            ]
+        }
         
 ### Create a comment [POST]
 + Request (application/json)
 
-        {"token": "user token", "comment": "this is a comment", "parent_id": "1"}
+        {"content": "this is a comment", "parent_id": "1"}
 
 + Response 200 (application/json)
 
@@ -213,10 +274,14 @@ Ex without errors:
     + articleId (required, string) ... ID of article.
     + commentId (required, string) ... ID of comment.
 + Request (application/json)
-    
-        {"token": "user token"}
         
 + Response 200
+
+        {
+            "message": "Comment {id} has been deleted",
+            "errors": null,
+            "data": null
+        }
 
 # Group Quiz
 Every question of a Quiz or a Poll has 2 type: SINGLE_CHOICE and MULTI_CHOICE.
