@@ -80,10 +80,10 @@ Ex without errors:
         }
 
 # Group Articles
-## Articles Collection [/articles/{?type}{?page}{?per_page}{?sort}{?order}{?tag_id}]
+## Articles Collection [/articles/{?type_id}{?page}{?per_page}{?sort}{?order}{?tag_id}]
 ### List all articles [GET]
 + Parameters
-    + type (required, String, `1` ) ... type of article. 1: Article, 2: Blog, 3: Lesson.
+    + type_id (required, String, `1` ) ... type of article. 1: Article, 2: Blog, 3: Lesson.
     + page (optional, number, `1` ) ... Default value: 1
     + per_page (optional, number, `10` ) ... Default value: 10
     + sort (optional, string, `title` ) ... sort by field name. Ex: id, title, created_at
