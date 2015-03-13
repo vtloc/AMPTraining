@@ -484,53 +484,57 @@ Each event has 3 states: OPEN, ONGOING, CLOSED.
 
 + Response 200 (application/json)
 
-        [
-            {
-            "id": "1",
-            "name": "event name 1",
-            "thumb": "image link"
-            "start_time": "2014-02-20T19:20+00:00",
-            "end_time": "2014-02-22T19:20+00:00",
-            "latitude": 10.000,
-            "longitude": 104.001,
-            "address": "165, hai ba trung",
-            "status": "OPEN",
-            "joined": false,
-            "attendee": 100,
-            "interesting_count": 100,
-            "interested_count": 50
-            },
-            {
-            "id": "2",
-            "name": "event name 1 - event ongoing",
-            "thumb": "image link"
-            "start_time": "2014-02-20T19:20+00:00",
-            "end_time": "2014-02-22T19:20+00:00",
-            "latitude": 10.000,
-            "longitude": 104.001,
-            "address": "165, hai ba trung",
-            "status": "ONGOING",
-            "joined": false,
-            "attendee": 100,
-            "interesting_count": 100,
-            "interested_count": 50
-            },
-            {
-            "id": "3",
-            "name": "event name - user joined",
-            "thumb": "image link"
-            "start_time": "2014-02-20T19:20+00:00",
-            "end_time": "2014-02-22T19:20+00:00",
-            "latitude": 10.000,
-            "longitude": 104.001,
-            "address": "165, hai ba trung",
-            "status": "CLOSED",
-            "joined": true,
-            "attendee": 100,
-            "interesting_count": 100,
-            "interested_count": 50
-            }
+    {
+            "error": null, 
+            "message": null, 
+            "data":    [
+                {
+                "id": "1",
+                "name": "event name 1",
+                "thumb": "image link"
+                "start_time": "2014-02-20T19:20+00:00",
+                "end_time": "2014-02-22T19:20+00:00",
+                "latitude": 10.000,
+                "longitude": 104.001,
+                "address": "165, hai ba trung",
+                "status": "OPEN",
+                "joined": false,
+                "attendee": 100,
+                "interesting_count": 100,
+                "interested_count": 50
+                },
+                {
+                "id": "2",
+                "name": "event name 1 - event ongoing",
+                "thumb": "image link"
+                "start_time": "2014-02-20T19:20+00:00",
+                "end_time": "2014-02-22T19:20+00:00",
+                "latitude": 10.000,
+                "longitude": 104.001,
+                "address": "165, hai ba trung",
+                "status": "ONGOING",
+                "joined": false,
+                "attendee": 100,
+                "interesting_count": 100,
+                "interested_count": 50
+                },
+                {
+                "id": "3",
+                "name": "event name - user joined",
+                "thumb": "image link"
+                "start_time": "2014-02-20T19:20+00:00",
+                "end_time": "2014-02-22T19:20+00:00",
+                "latitude": 10.000,
+                "longitude": 104.001,
+                "address": "165, hai ba trung",
+                "status": "CLOSED",
+                "joined": true,
+                "attendee": 100,
+                "interesting_count": 100,
+                "interested_count": 50
+                }
         ]
+    }
         
 ## Event [/events/{eventId}]
 ### Get Event's detail [GET]
