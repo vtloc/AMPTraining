@@ -647,16 +647,28 @@ Option's type can be **INPUT** or **LABEL**
     + per_page (optional, number, `10` ) ... Default value: 10
 
 + Response 200 (application/json)
-
-        [
-            {"id": "1", 
+        {
+            "error": null,
+            "message": "",
+            "data": [
+            {"id": 1, 
             "message": "message content 1", 
-            "user_name": "user_name",
-            "user_id": "1", 
-            "parent_id": "",
+            "user_name": "user_name 1",
+            "user_id": 1, 
+            "parent_id": 1,
             "create_at": "2014-02-22T19:20+00:00"
+            },
+            {
+                "id": 2,
+                "message": "Message content 2",
+                "user_id": 2,
+                "user_name": "user_name 2",
+                "parent_id": 2,
+                "create_at": "2014-02-22T19:20+00:00"
             }
         ]
+        }
+        
         
 ### Create a message [POST]
 + Request (application/json)
