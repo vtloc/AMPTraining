@@ -487,53 +487,53 @@ Each event has 3 states: OPEN, ONGOING, CLOSED.
     {
         "error": null, 
         "message": null, 
-        "data":    [
-            {
-            "id": "1",
-            "name": "event name 1",
-            "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg",
-            "start_time": "2014-02-20T19:20+00:00",
-            "end_time": "2014-02-22T19:20+00:00",
-            "latitude": 10.000,
-            "longitude": 104.001,
-            "address": "165, hai ba trung",
-            "status": "OPEN",
-            "joined": false,
-            "attendee": 100,
-            "interesting_count": 100,
-            "interested_count": 50
-            },
-            {
-            "id": "2",
-            "name": "event name 1 - event ongoing",
-            "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg",
-            "start_time": "2014-02-20T19:20+00:00",
-            "end_time": "2014-02-22T19:20+00:00",
-            "latitude": 10.000,
-            "longitude": 104.001,
-            "address": "165, hai ba trung",
-            "status": "ONGOING",
-            "joined": false,
-            "attendee": 100,
-            "interesting_count": 100,
-            "interested_count": 50
-            },
-            {
-            "id": "3",
-            "name": "event name - user joined",
-            "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg",
-            "start_time": "2014-02-20T19:20+00:00",
-            "end_time": "2014-02-22T19:20+00:00",
-            "latitude": 10.000,
-            "longitude": 104.001,
-            "address": "165, hai ba trung",
-            "status": "CLOSED",
-            "joined": true,
-            "attendee": 100,
-            "interesting_count": 100,
-            "interested_count": 50
-            }
-        ]
+        "data":[
+                    {
+                    "id": "1",
+                    "name": "event name 1",
+                    "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg",
+                    "start_time": "2014-02-20T19:20+00:00",
+                    "end_time": "2014-02-22T19:20+00:00",
+                    "latitude": 10.000,
+                    "longitude": 104.001,
+                    "address": "165, hai ba trung",
+                    "status": "OPEN",
+                    "joined": false,
+                    "attendee": 100,
+                    "interesting_count": 100,
+                    "interested_count": 50
+                    },
+                    {
+                    "id": "2",
+                    "name": "event name 1 - event ongoing",
+                    "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg",
+                    "start_time": "2014-02-20T19:20+00:00",
+                    "end_time": "2014-02-22T19:20+00:00",
+                    "latitude": 10.000,
+                    "longitude": 104.001,
+                    "address": "165, hai ba trung",
+                    "status": "ONGOING",
+                    "joined": false,
+                    "attendee": 100,
+                    "interesting_count": 100,
+                    "interested_count": 50
+                    },
+                    {
+                    "id": "3",
+                    "name": "event name - user joined",
+                    "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg",
+                    "start_time": "2014-02-20T19:20+00:00",
+                    "end_time": "2014-02-22T19:20+00:00",
+                    "latitude": 10.000,
+                    "longitude": 104.001,
+                    "address": "165, hai ba trung",
+                    "status": "CLOSED",
+                    "joined": true,
+                    "attendee": 100,
+                    "interesting_count": 100,
+                    "interested_count": 50
+                    }
+            ]
     }
         
 ## Event [/events/{eventId}]
@@ -647,28 +647,29 @@ Option's type can be **INPUT** or **LABEL**
     + per_page (optional, number, `10` ) ... Default value: 10
 
 + Response 200 (application/json)
+
         {
             "error": null,
             "message": "",
             "data": [
-            {"id": 1, 
-            "message": "message content 1", 
-            "user_name": "user_name 1",
-            "user_id": 1, 
-            "parent_id": 1,
-            "discussion_id": 1,
-            "create_at": "2014-02-22T19:20+00:00"
-            },
-            {
-                "id": 2,
-                "message": "Message content 2",
-                "user_id": 2,
-                "user_name": "user_name 2",
-                "parent_id": 2,
+                {"id": 1, 
+                "message": "message content 1", 
+                "user_name": "user_name 1",
+                "user_id": 1, 
+                "parent_id": 1,
                 "discussion_id": 1,
                 "create_at": "2014-02-22T19:20+00:00"
-            }
-        ]
+                },
+                {
+                    "id": 2,
+                    "message": "Message content 2",
+                    "user_id": 2,
+                    "user_name": "user_name 2",
+                    "parent_id": 2,
+                    "discussion_id": 1,
+                    "create_at": "2014-02-22T19:20+00:00"
+                }
+             ]
         }
         
         
@@ -939,7 +940,8 @@ Option's type can be **INPUT** or **LABEL**
                     "discussion": {
                         "id": 1,
                         "title": "title of discussion 1",
-                        "description": "discription of discussion 1"
+                        "description": "discription of discussion 1",
+                        "type_title":"Article"
                     },
                     "action": "CREATE",
                     "created_at": "2014-02-22T19:20+00:00"
@@ -949,7 +951,8 @@ Option's type can be **INPUT** or **LABEL**
                     "discussion": {
                         "id": 1,
                         "title": "title of discussion 1",
-                        "description": "discription of discussion 1"
+                        "description": "discription of discussion 1",
+                        "type_title":"Discussion"
                     },
                     "comment": {
                         "id": 1,
