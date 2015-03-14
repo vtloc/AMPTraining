@@ -613,17 +613,17 @@ Option's type can be **INPUT** or **LABEL**
                 "title": "title",
                 "description": "discussion description",
                 "messages": [
-                    {"id": 1, "message": "message content 1", "user_id": 1, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 1},
-                    {"id": 2, "message": "message content 2", "user_id": 2, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 2}
+                    {"id": 1, "message": "message content 1", "user_id": 1, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 1, "discussion_id": 1},
+                    {"id": 2, "message": "message content 2", "user_id": 2, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 2, "discussion_id": 1}
                 ]
             },
             {
-                "id": 1,
+                "id": 2,
                 "title": "title",
                 "description": "discussion description",
                 "messages": [
-                    {"id": 1, "message": "message content 1", "user_id": 1, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 1},
-                    {"id": 2, "message": "message content 2", "user_id": 2, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 1}
+                    {"id": 3, "message": "message content 1", "user_id": 3, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 1, "discussion_id": 2},
+                    {"id": 4, "message": "message content 2", "user_id": 4, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 1, "discussion_id": 2}
                 ]
             }
         ]
@@ -825,8 +825,7 @@ Option's type can be **INPUT** or **LABEL**
                         "discussion": {
                             "id": 1,
                             "title": "title of discussion 1",
-                            "description": "discription of discussion 1",
-                            "type_title":"Article"
+                            "description": "discription of discussion 1"
                         },
                         "action": "CREATE",
                         "created_at": "2014-02-22T19:20+00:00"
@@ -836,8 +835,7 @@ Option's type can be **INPUT** or **LABEL**
                         "discussion": {
                             "id": 1,
                             "title": "title of discussion 1",
-                            "description": "discription of discussion 1",
-                            "type_title":"Discussion"
+                            "description": "discription of discussion 1"
                         },
                         "comment": {
                             "id": 1,
