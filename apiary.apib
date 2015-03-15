@@ -91,7 +91,7 @@ Ex without errors:
     CREATE
     ANSWER
     
-## User's action type[type]    
+## User's action action id[action_id]    
     1 = SHARE
     2 = FOLLOW (interested)
     3 = UNFOLLOW (uninterested)
@@ -101,7 +101,7 @@ Ex without errors:
     7 = HIDE
     8 = SHOW
 
-## User's action content type[content_type]
+## User's action target type id[target_type_id]
     1 = Article
     2 = Blog
     3 = Lesson
@@ -1051,10 +1051,9 @@ Types of user action: SHARE, FOLLOW/UNFOLLOW(other user), RATE, ATTENDANT(event)
 + Request (application/json)
 
         {
-            "type": "SHARE",
-            "content_id": "content_id",
-            "content_type": "ARTICLE",
-            "content_value": ""
+            "action_id": 1,
+            "target_id": 1,
+            "target_type_id": 1
         }
         
 + Response 200
