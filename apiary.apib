@@ -873,9 +873,16 @@ Option's type can be **INPUT** or **LABEL**
 ### Delete a message [DELETE]
 + Request (application/json)
 
-        {"token": "user_token"}
+        
     
 + Response 200
+
+        {
+            "message": "Your message has been deleted",
+            "errors": null,
+            "data": null,
+            "extra_data": null
+        }
 
 # Group Users
 3 types (MEMBER, COACH, COMMUNITY)
