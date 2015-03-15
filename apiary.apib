@@ -638,8 +638,12 @@ Option's type can be **INPUT** or **LABEL**
         {"token": "user_token", "title": "Discussion title", "description": "description"}
 
 + Response 200 (application/json)
+        {
+            "error": null,
+            "message": "",
+            "data": {"id": 1}
+        }
         
-        {"id": "1"}
 
 ## Discussion [/discussion/{discussionId}/messages/{?page}{?per_page}]
 ### Get list messages [GET]
