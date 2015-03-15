@@ -600,29 +600,83 @@ Option's type can be **INPUT** or **LABEL**
 ### Get all Discussions with 2 latest messages [GET]
 + Response 200 (application/json)
 
-        {
-            "errors":null, 
-            "message":"", 
-            "data":[
-                {
-                    "id": 1,
-                    "title": "title",
-                    "description": "discussion description",
-                    "messages": [
-                        {"id": 1, "message": "message content 1", "user_id": 1, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 1, "discussion_id": 1},
-                        {"id": 2, "message": "message content 2", "user_id": 2, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 2, "discussion_id": 1}
-                    ]
-                },
-                {
-                    "id": 2,
-                    "title": "title",
-                    "description": "discussion description",
-                    "messages": [
-                        {"id": 3, "message": "message content 1", "user_id": 3, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 1, "discussion_id": 2},
-                        {"id": 4, "message": "message content 2", "user_id": 4, "user_name": "user_name", "create_at": "2014-02-22T19:20+00:00", "parent_id": 1, "discussion_id": 2}
-                    ]
-                }
-            ]
+        "message": null,
+        "errors": null,
+        "data": [
+            {
+                "id": 1,
+                "title": "Discussion 1",
+                "description": "I'm so cute",
+                "messages": [
+                    {
+                        "id": 1,
+                        "content": "Admin's comment.",
+                        "parent_id": null,
+                        "created_at": "2015-03-15T12:32:11+00:00",
+                        "created_by_user": {
+                            "id": 1,
+                            "username": "admin",
+                            "email": "admin@apollo.com",
+                            "first_name": "Admin",
+                            "last_name": null,
+                            "name_title": "Mr",
+                            "gender": 1,
+                            "type_id": 1,
+                            "job_title": null,
+                            "organization": null,
+                            "summary": null,
+                            "business_interest": null,
+                            "interested_count": 0,
+                            "recommended_count": 0,
+                            "created_at": "2015-03-15T12:32:08+00:00"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Discussion 2",
+                "description": "I'm so cute",
+                "messages": [
+                    {
+                        "id": 2,
+                        "content": "Admin's comment.",
+                        "parent_id": null,
+                        "created_at": "2015-03-15T12:32:11+00:00",
+                        "created_by_user": {
+                            "id": 1,
+                            "username": "admin",
+                            "email": "admin@apollo.com",
+                            "first_name": "Admin",
+                            "last_name": null,
+                            "name_title": "Mr",
+                            "gender": 1,
+                            "type_id": 1,
+                            "job_title": null,
+                            "organization": null,
+                            "summary": null,
+                            "business_interest": null,
+                            "interested_count": 0,
+                            "recommended_count": 0,
+                            "created_at": "2015-03-15T12:32:08+00:00"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Discussion 3",
+                "description": "I'm so cute",
+                "latest_messages": []
+            }
+        ],
+        "extra_data": {
+            "total": 3,
+            "per_page": 10,
+            "current_page": 1,
+            "last_page": 1,
+            "from": 1,
+            "to": 3
         }
         
        
