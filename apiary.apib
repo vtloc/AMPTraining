@@ -695,7 +695,7 @@ Option's type can be **INPUT** or **LABEL**
         }
         
 
-## Discussion [/discussion/{discussionId}/messages/{?page}{?per_page}]
+## Discussion [/discussions/{discussionId}/messages/{?page}{?per_page}]
 ### Get list messages [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
@@ -704,27 +704,133 @@ Option's type can be **INPUT** or **LABEL**
 + Response 200 (application/json)
 
         {
-            "error": null,
-            "message": "",
+            "message": null,
+            "errors": null,
             "data": [
-                {"id": 1, 
-                "message": "message content 1", 
-                "user_name": "user_name 1",
-                "user_id": 1, 
-                "parent_id": 1,
-                "discussion_id": 1,
-                "create_at": "2014-02-22T19:20+00:00"
+                {
+                    "id": 1,
+                    "content": "Admin's comment.",
+                    "parent_id": null,
+                    "created_at": "2015-03-15T12:32:11+00:00",
+                    "created_by_user": {
+                        "id": 1,
+                        "username": "admin",
+                        "email": "admin@apollo.com",
+                        "first_name": "Admin",
+                        "last_name": null,
+                        "name_title": "Mr",
+                        "gender": 1,
+                        "type_id": 1,
+                        "job_title": null,
+                        "organization": null,
+                        "summary": null,
+                        "business_interest": null,
+                        "interested_count": 0,
+                        "recommended_count": 0,
+                        "created_at": "2015-03-15T12:32:08+00:00"
+                    }
                 },
                 {
-                    "id": 2,
-                    "message": "Message content 2",
-                    "user_id": 2,
-                    "user_name": "user_name 2",
-                    "parent_id": 2,
-                    "discussion_id": 1,
-                    "create_at": "2014-02-22T19:20+00:00"
+                    "id": 4,
+                    "content": "Loc's comment.",
+                    "parent_id": null,
+                    "created_at": "2015-03-15T12:32:11+00:00",
+                    "created_by_user": {
+                        "id": 2,
+                        "username": "thanhloc",
+                        "email": "thanhloc@apollo.com",
+                        "first_name": "Loc",
+                        "last_name": "Thanh",
+                        "name_title": "Mr",
+                        "gender": 1,
+                        "type_id": 2,
+                        "job_title": "Founder of Epsilon Mobile",
+                        "organization": "Epsilon Mobile",
+                        "summary": "Cute!",
+                        "business_interest": "Startup",
+                        "interested_count": 1,
+                        "recommended_count": 4,
+                        "created_at": "2015-03-15T12:32:09+00:00"
+                    }
+                },
+                {
+                    "id": 7,
+                    "content": "Linh's comment.",
+                    "parent_id": null,
+                    "created_at": "2015-03-15T12:32:11+00:00",
+                    "created_by_user": {
+                        "id": 3,
+                        "username": "numnine",
+                        "email": "numnine@apollo.com",
+                        "first_name": "Linh",
+                        "last_name": "Tinh",
+                        "name_title": "Mr",
+                        "gender": 1,
+                        "type_id": 2,
+                        "job_title": "Web Freelancer",
+                        "organization": "Freelance",
+                        "summary": "Handsome!",
+                        "business_interest": "Startup",
+                        "interested_count": 1,
+                        "recommended_count": 0,
+                        "created_at": "2015-03-15T12:32:09+00:00"
+                    }
+                },
+                {
+                    "id": 10,
+                    "content": "Thuan's comment.",
+                    "parent_id": null,
+                    "created_at": "2015-03-15T12:32:11+00:00",
+                    "created_by_user": {
+                        "id": 4,
+                        "username": "minhthuan",
+                        "email": "minhthuan@apollo.com",
+                        "first_name": "Thuan",
+                        "last_name": "Minh",
+                        "name_title": "Mr",
+                        "gender": 1,
+                        "type_id": 3,
+                        "job_title": "QC",
+                        "organization": "Epsilon Mobile",
+                        "summary": "Cute!",
+                        "business_interest": "Test test and test",
+                        "interested_count": 0,
+                        "recommended_count": 0,
+                        "created_at": "2015-03-15T12:32:09+00:00"
+                    }
+                },
+                {
+                    "id": 13,
+                    "content": "Quyen's comment.",
+                    "parent_id": null,
+                    "created_at": "2015-03-15T12:32:11+00:00",
+                    "created_by_user": {
+                        "id": 5,
+                        "username": "yenquyen",
+                        "email": "yenquyen@apollo.com",
+                        "first_name": "Quyen",
+                        "last_name": "Tran Yen",
+                        "name_title": "Ms",
+                        "gender": 2,
+                        "type_id": 2,
+                        "job_title": "Communicator",
+                        "organization": "Epsilon Mobile",
+                        "summary": "Mysterious girl?",
+                        "business_interest": "Communication",
+                        "interested_count": 0,
+                        "recommended_count": 0,
+                        "created_at": "2015-03-15T12:32:10+00:00"
+                    }
                 }
-             ]
+            ],
+            "extra_data": {
+                "total": 5,
+                "per_page": 10,
+                "current_page": 1,
+                "last_page": 1,
+                "from": 1,
+                "to": 5
+            }
         }
         
         
