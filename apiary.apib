@@ -539,11 +539,14 @@ Each event has 3 states: OPEN, ONGOING, CLOSED.
 ### Get Event's detail [GET]
 + Response 200 (application/json)
 
-        {
+    {
+        "error": null, 
+        "message": null, 
+        "data": {
             "id": "1",
             "detail": "event detail",
             "name": "event name - user joined",
-            "thumb": "image link"
+            "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg"
             "start_time": "2014-02-20T19:20+00:00",
             "end_time": "2014-02-22T19:20+00:00",
             "latitude": 10.000,
@@ -554,6 +557,7 @@ Each event has 3 states: OPEN, ONGOING, CLOSED.
             "attendee_count": 100,
             "interesting_count": 100
         }
+    }
         
 ## Event [/events/{eventId}/statistic]
 ### Get Event's statistic [GET]
