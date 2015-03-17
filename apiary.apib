@@ -596,11 +596,16 @@ Option's type can be **INPUT** or **LABEL**
 ### Submit event's feedback [POST]
 + Response 200 (application/json)
 
+    {
+        "error": null, 
+        "message": null, 
+        "data":
         [ 
         { "id" : "1" },
         { "id" : "2" },
         { "id" : "3", "value" : "This is not a good place for event"}
         ]
+    }
         
 # Group Discussions
 ## Discussions Collection [/discussions/{?page}{?per_page}]
