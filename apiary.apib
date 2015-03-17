@@ -100,8 +100,8 @@ Ex without errors:
     4 = RATE
     5 = JOIN
     6 = UNJOIN
-    7 = HIDE RECOMMENDATION
-    8 = SHOW RECOMMENDATION
+    7 = HIDE
+    8 = SHOW
 
 ## User's action target type id[target_type_id]
     1 = Article
@@ -576,7 +576,11 @@ Option's type can be **INPUT** or **LABEL**
 
 ### Get event feedback [GET]
 + Response 200 (application/json)
-
+    
+    {
+        "error": null, 
+        "message": null, 
+        "data":
         {
             "question": "question for feedback",
             "type": "SINGLE_CHOICE",
@@ -586,6 +590,7 @@ Option's type can be **INPUT** or **LABEL**
                 {"id": "3","type" : "INPUT",  "text": "option 3"},
             ]
         }
+    }
         
 ## Event's feedback submit [/events/{eventId}/feedback/submit]
 ### Submit event's feedback [POST]
