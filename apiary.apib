@@ -594,18 +594,21 @@ Option's type can be **INPUT** or **LABEL**
         
 ## Event's feedback submit [/events/{eventId}/feedback/submit]
 ### Submit event's feedback [POST]
-+ Response 200 (application/json)
++ Request (application/json)
 
-    {
-        "error": null, 
-        "message": null, 
-        "data":
         [ 
         { "id" : "1" },
         { "id" : "2" },
         { "id" : "3", "value" : "This is not a good place for event"}
         ]
-    }
+    
++ Response 200
+
+        {
+            "message": "Your feedback has been submited",
+            "errors": null,
+            "data":null
+        }
         
 # Group Discussions
 ## Discussions Collection [/discussions/{?page}{?per_page}]
