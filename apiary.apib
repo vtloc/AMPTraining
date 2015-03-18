@@ -626,6 +626,7 @@ Option's type can be **INPUT** or **LABEL**
                 "id": 1,
                 "title": "Discussion 1",
                 "description": "I'm so cute",
+                "posted_area_id": 1,
                 "messages": [
                     {
                         "id": 1,
@@ -656,6 +657,7 @@ Option's type can be **INPUT** or **LABEL**
                 "id": 2,
                 "title": "Discussion 2",
                 "description": "I'm so cute",
+                "posted_area_id": 1,
                 "messages": [
                     {
                         "id": 2,
@@ -686,6 +688,7 @@ Option's type can be **INPUT** or **LABEL**
                 "id": 3,
                 "title": "Discussion 3",
                 "description": "I'm so cute",
+                "posted_area_id": 1,
                 "messages": []
             }
         ],
@@ -703,7 +706,7 @@ Option's type can be **INPUT** or **LABEL**
 ### Create new Discussion thread [POST]
 + Request (application/json)
 
-        {"token": "user_token", "title": "Discussion title", "description": "description"}
+        {"title": "Discussion title", "description": "description", "posted_area_id": "1"}
 
 + Response 200 (application/json)
 
@@ -713,6 +716,7 @@ Option's type can be **INPUT** or **LABEL**
             "data": {
                 "title": "title",
                 "description": "Description",
+                "posted_area_id": 1,
                 "id": 6
             },
             "extra_data": null
