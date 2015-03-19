@@ -1409,7 +1409,7 @@ content_type: BLOG, LESSON, ARTICLE.
                         }
                     }
                 ], 
-                "me_interested":[
+                "i_interested":[
                     {
                         "id": 3, 
                         "type_id": 4, 
@@ -1465,3 +1465,134 @@ content_type: BLOG, LESSON, ARTICLE.
             "errors": null
         }
 
+## "Interested to me" collection[/myprofile/interestedme]
+### Get "Interested to me" user list [GET]
++ Parameters
+    + page (optional, number, `1` ) ... Default value: 1
+    + per_page (optional, number, `10` ) ... Default value: 10
+    + sort (optional, string, `first_name` ) ... sort by field name. Ex: id, first_name, created_at
+    + order (optional, string, `desc` ) ... Sort direction. Only allow 'desc|asc'
+    + name (optional, string, `loc` ) ... 
++ Response 200 (application/json)
+        
+        {
+            "message": null,
+            "data": [
+                    {
+                        "id": 3, 
+                        "type_id": 4, 
+                        "status_id": 1,
+                        "gender": 1,
+                        "username": "user_name", 
+                        "email": "email",
+                        "first_name": "First name",
+                        "last_name": "Last name",
+                        "name_title": "Mr",
+                        "job_title": "job title", 
+                        "organization": "organization", 
+                        "created_at": "2014-02-22T19:20+00:00", 
+                        "interested_count": 100,
+                        "recommended_count": 100    
+                    },
+                    {
+                        "id": 2, 
+                        "type_id": 4, 
+                        "status_id": 1,
+                        "gender": 1,
+                        "username": "user_name", 
+                        "email": "email",
+                        "first_name": "First name",
+                        "last_name": "Last name",
+                        "name_title": "Mr",
+                        "job_title": "job title", 
+                        "organization": "organization", 
+                        "created_at": "2014-02-22T19:20+00:00", 
+                        "interested_count": 100,
+                        "recommended_count": 100
+                    },
+                    {
+                        "id": 1, 
+                        "type_id": 4, 
+                        "status_id": 1,
+                        "gender": 1,
+                        "username": "user_name", 
+                        "email": "email",
+                        "first_name": "First name",
+                        "last_name": "Last name",
+                        "name_title": "Mr",
+                        "job_title": "job title", 
+                        "organization": "organization", 
+                        "created_at": "2014-02-22T19:20+00:00", 
+                        "interested_count": 100,
+                        "recommended_count": 100
+                    }
+                ]
+            ,
+            "errors": null
+        }
+
+## "I'm interested" collection[/myprofile/interested]
+### Get "I'm interested" user list [GET]
++ Parameters
+    + page (optional, number, `1` ) ... Default value: 1
+    + per_page (optional, number, `10` ) ... Default value: 10
+    + sort (optional, string, `first_name` ) ... sort by field name. Ex: id, first_name, created_at
+    + order (optional, string, `desc` ) ... Sort direction. Only allow 'desc|asc'
+    + name (optional, string, `loc` ) ... 
++ Response 200 (application/json)
+        
+        {
+            "message": null,
+            "data": [
+                    {
+                        "id": 3, 
+                        "type_id": 4, 
+                        "status_id": 1,
+                        "gender": 1,
+                        "username": "user_name", 
+                        "email": "email",
+                        "first_name": "First name",
+                        "last_name": "Last name",
+                        "name_title": "Mr",
+                        "job_title": "job title", 
+                        "organization": "organization", 
+                        "created_at": "2014-02-22T19:20+00:00", 
+                        "interested_count": 100,
+                        "recommended_count": 100    
+                    },
+                    {
+                        "id": 2, 
+                        "type_id": 4, 
+                        "status_id": 1,
+                        "gender": 1,
+                        "username": "user_name", 
+                        "email": "email",
+                        "first_name": "First name",
+                        "last_name": "Last name",
+                        "name_title": "Mr",
+                        "job_title": "job title", 
+                        "organization": "organization", 
+                        "created_at": "2014-02-22T19:20+00:00", 
+                        "interested_count": 100,
+                        "recommended_count": 100
+                    },
+                    {
+                        "id": 1, 
+                        "type_id": 4, 
+                        "status_id": 1,
+                        "gender": 1,
+                        "username": "user_name", 
+                        "email": "email",
+                        "first_name": "First name",
+                        "last_name": "Last name",
+                        "name_title": "Mr",
+                        "job_title": "job title", 
+                        "organization": "organization", 
+                        "created_at": "2014-02-22T19:20+00:00", 
+                        "interested_count": 100,
+                        "recommended_count": 100
+                    }
+                ]
+            ,
+            "errors": null
+        }
