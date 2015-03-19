@@ -1166,42 +1166,141 @@ Option's type can be **INPUT** or **LABEL**
         {
             "message": null,
             "errors": null,
-            "data": [
-                {
-                    "id": 1,
-                    "discussion": {
-                        "id": 1,
-                        "title": "title of discussion 1",
-                        "description": "discription of discussion 1",
-                        "type_title":"Article"
+            "data": {
+                "id": 3,
+                "username": "numnine",
+                "email": "linhpth@gmail.com",
+                "first_name": "Linh",
+                "last_name": "Tinh",
+                "name_title": "Mr",
+                "gender": 1,
+                "type_id": 2,
+                "job_title": "Web Freelancer",
+                "organization": "Freelance",
+                "summary": "Handsome!",
+                "business_interest": "Startup",
+                "interested_count": 0,
+                "recommended_count": 1,
+                "created_at": "2015-03-15T19:49:24+00:00",
+                "password_updated_at": "2015-03-19T23:29:38+00:00",
+                "is_interested": false,
+                "discussion_histories": [
+                    {
+                        "id": 13,
+                        "created_at": "2015-03-19T19:25:09+00:00",
+                        "action": "CREATE",
+                        "target": {
+                            "id": 8,
+                            "title": "Ha noi mua vang nhung con mua",
+                            "description": "Hoa sua thoi roi",
+                            "posted_area_id": 1,
+                            "created_by_user": {
+                                "id": 3,
+                                "username": "numnine",
+                                "email": "linhpth@gmail.com",
+                                "first_name": "Linh",
+                                "last_name": "Tinh",
+                                "name_title": "Mr",
+                                "gender": 1,
+                                "type_id": 2,
+                                "job_title": "Web Freelancer",
+                                "organization": "Freelance",
+                                "summary": "Handsome!",
+                                "business_interest": "Startup",
+                                "interested_count": 0,
+                                "recommended_count": 1,
+                                "created_at": "2015-03-15T19:49:24+00:00",
+                                "password_updated_at": "2015-03-19T23:29:38+00:00"
+                            }
+                        },
+                        "comment": null
                     },
-                    "action": "CREATE",
-                    "created_at": "2014-02-22T19:20+00:00"
-                },
-                {
-                    "id": 2,
-                    "discussion": {
-                        "id": 1,
-                        "title": "title of discussion 1",
-                        "description": "discription of discussion 1",
-                        "type_title":"Discussion"
-                    },
-                    "comment": {
-                        "id": 1,
-                        "content": "content of comment"
-                    },
-                    "action": "ANSWER",
-                    "created_at": "2014-02-22T19:20+00:00"
-                }
-            ],
-            "extra_data": {
-                "total": 4,
-                "per_page": 10,
-                "current_page": 1,
-                "last_page": 1,
-                "from": 1,
-                "to": 4,
-            }   
+                    {
+                        "id": 12,
+                        "created_at": "2015-03-19T18:39:38+00:00",
+                        "action": "ANSWER",
+                        "target": {
+                            "id": 1,
+                            "title": "Loc's article 1",
+                            "summary": "",
+                            "content": "Article content 1",
+                            "type_id": 1,
+                            "view_count": 0,
+                            "share_count": 0,
+                            "comment_count": 11,
+                            "rating_count": 0,
+                            "rating_average": "0.0",
+                            "created_at": "2015-03-15T19:49:26+00:00",
+                            "thumb": "http://apollo.loc:8000/assets/images/no-image.png",
+                            "tags": [
+                                {
+                                    "id": 2,
+                                    "name": "Tag 2"
+                                },
+                                {
+                                    "id": 8,
+                                    "name": "Tag 8"
+                                },
+                                {
+                                    "id": 9,
+                                    "name": "Tag 9"
+                                }
+                            ]
+                        },
+                        "comment": {
+                            "id": 213,
+                            "content": "Test comment",
+                            "parent_id": null,
+                            "created_at": "2015-03-19T18:39:38+00:00",
+                            "target_type_id": 1,
+                            "created_by_user": {
+                                "id": 3,
+                                "username": "numnine",
+                                "email": "linhpth@gmail.com",
+                                "first_name": "Linh",
+                                "last_name": "Tinh",
+                                "name_title": "Mr",
+                                "gender": 1,
+                                "type_id": 2,
+                                "job_title": "Web Freelancer",
+                                "organization": "Freelance",
+                                "summary": "Handsome!",
+                                "business_interest": "Startup",
+                                "interested_count": 0,
+                                "recommended_count": 1,
+                                "created_at": "2015-03-15T19:49:24+00:00",
+                                "password_updated_at": "2015-03-19T23:29:38+00:00"
+                            }
+                        }
+                    }
+                ],
+                "recommendations": [
+                    {
+                        "id": 5,
+                        "message": "Hahaha",
+                        "created_at": "2015-03-18T15:10:06+00:00",
+                        "created_by_user": {
+                            "id": 3,
+                            "username": "numnine",
+                            "email": "linhpth@gmail.com",
+                            "first_name": "Linh",
+                            "last_name": "Tinh",
+                            "name_title": "Mr",
+                            "gender": 1,
+                            "type_id": 2,
+                            "job_title": "Web Freelancer",
+                            "organization": "Freelance",
+                            "summary": "Handsome!",
+                            "business_interest": "Startup",
+                            "interested_count": 0,
+                            "recommended_count": 1,
+                            "created_at": "2015-03-15T19:49:24+00:00",
+                            "password_updated_at": "2015-03-19T23:29:38+00:00"
+                        }
+                    }
+                ]
+            },
+            "extra_data": null
         }
         
 ## User's recommendations [/users/{user_id}/recommendations/{?page}{?per_page}{?sort}{?order}]
