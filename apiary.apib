@@ -627,86 +627,154 @@ Option's type can be **INPUT** or **LABEL**
 ### Get all Discussions with 2 latest messages [GET]
 + Response 200 (application/json)
 
-        "message": null,
-        "errors": null,
-        "data": [
-            {
-                "id": 1,
-                "title": "Discussion 1",
-                "description": "I'm so cute",
-                "posted_area_id": 1,
-                "messages": [
-                    {
+        {
+            "message": null,
+            "errors": null,
+            "data": [
+                {
+                    "id": 11,
+                    "created_at": "2015-03-19T18:39:20+00:00",
+                    "action": "ANSWER",
+                    "target": {
                         "id": 1,
-                        "content": "Admin's comment.",
-                        "parent_id": null,
-                        "created_at": "2015-03-15T12:32:11+00:00",
+                        "title": "Discussion 1",
+                        "description": "I'm so cute",
+                        "posted_area_id": null,
                         "created_by_user": {
-                            "id": 1,
-                            "username": "admin",
-                            "email": "admin@apollo.com",
-                            "first_name": "Admin",
-                            "last_name": null,
+                            "id": 2,
+                            "username": "thanhloc",
+                            "email": "thanhloc@apollo.com",
+                            "first_name": "Loc",
+                            "last_name": "Thanh",
                             "name_title": "Mr",
                             "gender": 1,
-                            "type_id": 1,
-                            "job_title": null,
-                            "organization": null,
-                            "summary": null,
-                            "business_interest": null,
-                            "interested_count": 0,
-                            "recommended_count": 0,
-                            "created_at": "2015-03-15T12:32:08+00:00"
+                            "type_id": 2,
+                            "job_title": "Founder of Epsilon Mobile",
+                            "organization": "Epsilon Mobile",
+                            "summary": "Cute!",
+                            "business_interest": "Startup",
+                            "interested_count": 1,
+                            "recommended_count": 4,
+                            "created_at": "2015-03-15T19:49:23+00:00",
+                            "password_updated_at": "2015-03-19T23:38:30+00:00"
                         }
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "title": "Discussion 2",
-                "description": "I'm so cute",
-                "posted_area_id": 1,
-                "messages": [
-                    {
-                        "id": 2,
-                        "content": "Admin's comment.",
+                    },
+                    "comment": {
+                        "id": 212,
+                        "content": "Cai ret dau dong khan em bay",
                         "parent_id": null,
-                        "created_at": "2015-03-15T12:32:11+00:00",
+                        "created_at": "2015-03-19T18:39:19+00:00",
+                        "target_type_id": null,
                         "created_by_user": {
-                            "id": 1,
-                            "username": "admin",
-                            "email": "admin@apollo.com",
-                            "first_name": "Admin",
-                            "last_name": null,
+                            "id": 3,
+                            "username": "numnine",
+                            "email": "linhpth@gmail.com",
+                            "first_name": "Linh",
+                            "last_name": "Tinh",
                             "name_title": "Mr",
                             "gender": 1,
-                            "type_id": 1,
-                            "job_title": null,
-                            "organization": null,
-                            "summary": null,
-                            "business_interest": null,
+                            "type_id": 2,
+                            "job_title": "Web Freelancer",
+                            "organization": "Freelance",
+                            "summary": "Handsome!",
+                            "business_interest": "Startup",
                             "interested_count": 0,
-                            "recommended_count": 0,
-                            "created_at": "2015-03-15T12:32:08+00:00"
+                            "recommended_count": 1,
+                            "created_at": "2015-03-15T19:49:24+00:00",
+                            "password_updated_at": "2015-03-19T23:29:38+00:00"
                         }
                     }
-                ]
-            },
-            {
-                "id": 3,
-                "title": "Discussion 3",
-                "description": "I'm so cute",
-                "posted_area_id": 1,
-                "messages": []
-            }
-        ],
-        "extra_data": {
-            "total": 3,
-            "per_page": 10,
-            "current_page": 1,
-            "last_page": 1,
-            "from": 1,
-            "to": 3
+                },
+                {
+                    "id": 12,
+                    "created_at": "2015-03-19T18:39:38+00:00",
+                    "action": "ANSWER",
+                    "target": {
+                        "id": 1,
+                        "title": "Loc's article 1",
+                        "summary": "",
+                        "content": "Article content 1",
+                        "type_id": 1,
+                        "view_count": 0,
+                        "share_count": 0,
+                        "comment_count": 11,
+                        "rating_count": 0,
+                        "rating_average": "0.0",
+                        "created_at": "2015-03-15T19:49:26+00:00",
+                        "thumb": "http://apollo.loc:8000/assets/images/no-image.png",
+                        "tags": [
+                            {
+                                "id": 2,
+                                "name": "Tag 2"
+                            },
+                            {
+                                "id": 8,
+                                "name": "Tag 8"
+                            },
+                            {
+                                "id": 9,
+                                "name": "Tag 9"
+                            }
+                        ]
+                    },
+                    "comment": {
+                        "id": 213,
+                        "content": "Test comment",
+                        "parent_id": null,
+                        "created_at": "2015-03-19T18:39:38+00:00",
+                        "target_type_id": 1,
+                        "created_by_user": {
+                            "id": 3,
+                            "username": "numnine",
+                            "email": "linhpth@gmail.com",
+                            "first_name": "Linh",
+                            "last_name": "Tinh",
+                            "name_title": "Mr",
+                            "gender": 1,
+                            "type_id": 2,
+                            "job_title": "Web Freelancer",
+                            "organization": "Freelance",
+                            "summary": "Handsome!",
+                            "business_interest": "Startup",
+                            "interested_count": 0,
+                            "recommended_count": 1,
+                            "created_at": "2015-03-15T19:49:24+00:00",
+                            "password_updated_at": "2015-03-19T23:29:38+00:00"
+                        }
+                    }
+                },
+                {
+                    "id": 13,
+                    "created_at": "2015-03-19T19:25:09+00:00",
+                    "action": "CREATE",
+                    "target": {
+                        "id": 8,
+                        "title": "Ha noi mua vang nhung con mua",
+                        "description": "Hoa sua thoi roi",
+                        "posted_area_id": 1,
+                        "created_by_user": {
+                            "id": 3,
+                            "username": "numnine",
+                            "email": "linhpth@gmail.com",
+                            "first_name": "Linh",
+                            "last_name": "Tinh",
+                            "name_title": "Mr",
+                            "gender": 1,
+                            "type_id": 2,
+                            "job_title": "Web Freelancer",
+                            "organization": "Freelance",
+                            "summary": "Handsome!",
+                            "business_interest": "Startup",
+                            "interested_count": 0,
+                            "recommended_count": 1,
+                            "created_at": "2015-03-15T19:49:24+00:00",
+                            "password_updated_at": "2015-03-19T23:29:38+00:00"
+                        }
+                    },
+                    "comment": null
+                }
+            ],
+            "extra_data": null
         }
         
        
@@ -714,7 +782,7 @@ Option's type can be **INPUT** or **LABEL**
 ### Create new Discussion thread [POST]
 + Request (application/json)
 
-        {"title": "Discussion title", "description": "description", "posted_area_id": "1"}
+        {"title": "Discussion title", "description": "description"}
 
 + Response 200 (application/json)
 
@@ -723,8 +791,7 @@ Option's type can be **INPUT** or **LABEL**
             "errors": null,
             "data": {
                 "title": "title",
-                "description": "Description",
-                "posted_area_id": 1,
+                "description": "Description"
                 "id": 6
             },
             "extra_data": null
