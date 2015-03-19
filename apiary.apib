@@ -1307,3 +1307,101 @@ content_type: BLOG, LESSON, ARTICLE.
             {"id", "type": "USER_ACTION", "content_id": "content_id", "conten_title": "content_title", 
             "create_at": "2014-02-22T19:20+00:00", "content_type": "LESSON"}
         ]
+        
+# Group Api for My Profile
+## Get My Profile[/myprofile]
+### Get logined user's detail [GET]
++ Response 200 (application/json)
+
+        {
+            "message": null,
+            "data": {
+                "id": 3, 
+                "type_id": 4, 
+                "status_id": 1,
+                "gender": 1, 
+                "username": "user_name", 
+                "email": "email",
+                "first_name": "First name",
+                "last_name": "Last name",
+                "name_title": "Mr",
+                "job_title": "job title", 
+                "organization": "organization", 
+                "created_at": "2014-02-22T19:20+00:00",
+                "updated_at": "2014-02-22T19:20+00:00", 
+                "is_interested": false,
+                "interested_count": 100,
+                "recommended": false,
+                "recommended_count": 100,
+                "summary": "summary",
+                "business_interest": "Business interest",
+                "discussion_histories":[
+                    {
+                        "id": 1,
+                        "discussion": {
+                            "id": 1,
+                            "title": "title of discussion 1",
+                            "description": "discription of discussion 1",
+                            "type_title":"Article"
+                        },
+                        "action": "CREATE",
+                        "created_at": "2014-02-22T19:20+00:00"
+                    },
+                    {
+                        "id": 2,
+                        "discussion": {
+                            "id": 1,
+                            "title": "title of discussion 1",
+                            "description": "discription of discussion 1",
+                            "type_title":"Discussion"
+                        },
+                        "comment": {
+                            "id": 1,
+                            "content": "content of comment"
+                        },
+                        "action": "ANSWER",
+                        "created_at": "2014-02-22T19:20+00:00"
+                    }
+                ],
+                "recommendations": [
+                    {
+                    "id": 1, 
+                    "message": "message content 1", 
+                    "created_at": "2014-02-22T19:20+00:00", 
+                    "state": 1,
+                    "post_to_user": {
+                        "id": 3, 
+                        "type_id": 4, 
+                        "status_id": 1,
+                        "gender": 1, 
+                        "username": "user_name", 
+                        "email": "email",
+                        "first_name": "First name",
+                        "last_name": "Last name",
+                        "name_title": "Mr",
+                        "job_title": "job title"
+                        }
+                    },
+                    {
+                    "id": 2, 
+                    "message": "message content 2", 
+                    "created_at": "2014-02-22T19:20+00:00", 
+                    "state": 2,
+                    "post_to_user": {
+                        "id": 3, 
+                        "type_id": 4, 
+                        "status_id": 1,
+                        "gender": 1, 
+                        "username": "user_name", 
+                        "email": "email",
+                        "first_name": "First name",
+                        "last_name": "Last name",
+                        "name_title": "Mr",
+                        "job_title": "job title"
+                        }
+                    }
+                ]
+            },
+            "errors": null
+        }
+
