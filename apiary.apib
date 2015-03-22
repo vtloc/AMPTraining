@@ -275,10 +275,10 @@ Ex without errors:
             ]
         }
         
-### Create a comment [POST]
+### Create a note [POST]
 + Request (application/json)
 
-        {"content": "this is a comment"}
+        {"content": "this is a note"}
 
 + Response 200 (application/json)
 
@@ -291,11 +291,11 @@ Ex without errors:
             }
         }
         
-## Comment [/articles/{articleId}/notes/{commentId}]
+## Note [/articles/{articleId}/notes/{noteId}]
 ### Delete a Note [DELETE]
 + Parameters
     + articleId (required, string) ... ID of article.
-    + commentId (required, string) ... ID of comment.
+    + noteId (required, string) ... ID of note.
 + Request (application/json)
         
 + Response 200
