@@ -352,57 +352,209 @@ If user select Action A, the system may produce immediate feedback such as "This
 The message can be in red or green, based on the feedback's status field. Right now, we support two status: 
 **positive** for green color and **negative** for red color.
 
-## Quiz [/quiz/{articleId}]
-### List all question of quiz [GET]
+## Quiz [/articles/{articleId}/quizzes]
+### List all question of article's quiz [GET]
 + Response 200 (application/json)
 
-        [
-            {
-            "id": "1", 
-            "type": "SINGLE_CHOICE" ,
-            "question": "Question 1", 
-            "feedback_messages" : [
-                { "id": "1", "option_ids": ["1", "2"], "message" : "This is a correct answer", "status" : "positive"},
-                { "id": "2", "option_ids": ["2"], "message" : "This is not a correct answer", "status" : "negative"}
+        {
+            "message": null,
+            "errors": null,
+            "data": [
+                {
+                    "id": 234,
+                    "type_id": 2,
+                    "title": "Question 1",
+                    "options": [
+                        {
+                            "id": 857,
+                            "title": "Option 1"
+                        },
+                        {
+                            "id": 858,
+                            "title": "Option 2"
+                        },
+                        {
+                            "id": 859,
+                            "title": "Option 3"
+                        },
+                        {
+                            "id": 860,
+                            "title": "Option 4"
+                        }
+                    ],
+                    "feedback": [
+                        {
+                            "id": 789,
+                            "message": "Feedback for option 857,858,859",
+                            "option_ids": [
+                                "857",
+                                "858",
+                                "859"
+                            ],
+                            "status_id": 1
+                        },
+                        {
+                            "id": 790,
+                            "message": "Feedback for option 857,858,860",
+                            "option_ids": [
+                                "857",
+                                "858",
+                                "860"
+                            ],
+                            "status_id": 1
+                        },
+                        {
+                            "id": 791,
+                            "message": "Feedback for option 857,859,860",
+                            "option_ids": [
+                                "857",
+                                "859",
+                                "860"
+                            ],
+                            "status_id": 2
+                        }
+                    ]
+                },
+                {
+                    "id": 244,
+                    "type_id": 2,
+                    "title": "Question 11",
+                    "options": [
+                        {
+                            "id": 897,
+                            "title": "Option 1"
+                        },
+                        {
+                            "id": 898,
+                            "title": "Option 2"
+                        },
+                        {
+                            "id": 899,
+                            "title": "Option 3"
+                        }
+                    ],
+                    "feedback": [
+                        {
+                            "id": 820,
+                            "message": "Feedback for option 897,898,899",
+                            "option_ids": [
+                                "897",
+                                "898",
+                                "899"
+                            ],
+                            "status_id": 2
+                        }
+                    ]
+                },
+                {
+                    "id": 245,
+                    "type_id": 2,
+                    "title": "Question 12",
+                    "options": [
+                        {
+                            "id": 900,
+                            "title": "Option 1"
+                        },
+                        {
+                            "id": 901,
+                            "title": "Option 2"
+                        },
+                        {
+                            "id": 902,
+                            "title": "Option 3"
+                        },
+                        {
+                            "id": 903,
+                            "title": "Option 4"
+                        },
+                        {
+                            "id": 904,
+                            "title": "Option 5"
+                        }
+                    ],
+                    "feedback": [
+                        {
+                            "id": 821,
+                            "message": "Feedback for option 900,902,904",
+                            "option_ids": [
+                                "900",
+                                "902",
+                                "904"
+                            ],
+                            "status_id": 1
+                        },
+                        {
+                            "id": 822,
+                            "message": "Feedback for option 901,902,904",
+                            "option_ids": [
+                                "901",
+                                "902",
+                                "904"
+                            ],
+                            "status_id": 1
+                        },
+                        {
+                            "id": 823,
+                            "message": "Feedback for option 901,902,903",
+                            "option_ids": [
+                                "901",
+                                "902",
+                                "903"
+                            ],
+                            "status_id": 2
+                        },
+                        {
+                            "id": 824,
+                            "message": "Feedback for option 900,902,903",
+                            "option_ids": [
+                                "900",
+                                "902",
+                                "903"
+                            ],
+                            "status_id": 1
+                        },
+                        {
+                            "id": 825,
+                            "message": "Feedback for option 900,901,903",
+                            "option_ids": [
+                                "900",
+                                "901",
+                                "903"
+                            ],
+                            "status_id": 1
+                        },
+                        {
+                            "id": 826,
+                            "message": "Feedback for option 900,901,902",
+                            "option_ids": [
+                                "900",
+                                "901",
+                                "902"
+                            ],
+                            "status_id": 1
+                        }
+                    ]
+                }
             ],
-            "option_list": [
-                {"id": "1", "text": "text for quiz 1"},
-                {"id": "2", "text": "text for quiz 2"},
-                {"id": "3", "text": "text for quiz 3"}
-            ]
-            }, 
-            {
-            "id", "2", 
-            "type": "MULTI_CHOICE" ,
-            "question": "Question 2", 
-            "option_list": [
-                {"id": "4", "text": "text for quiz 1"},
-                {"id": "5", "text": "text for quiz 2"},
-                {"id": "6", "text": "text for quiz 3"},
-                {"id": "7", "text": "text for quiz 3"},
-            ]
-            },
-        ]
+            "extra_data": null
+        }
 
-## Quiz Submit [/quiz/{articleId}/submit]
+## Quiz Submit [/articles/{articleId}/quizzes/answers]
 ### submit quiz result [POST]
 + Request (application/json)
 
-        [
-            {
-            "id": "1",
-            "choices": [ 
-                { "id" : "1" }
-                ]
-            },
-            {
-            "id": "2",
-            "choices": [ 
-                { "id" : "1" },
-                { "id" : "2" }
-                ]
-            }
-        ]
+        {
+            'answers': [
+                {
+                    'question_id': 1,
+                    'option_ids': '1,2,3'
+                },
+                {
+                    'question_id': 2,
+                    'option_ids': '1,2,3'
+                }
+            ]
+        }
 
 + Response 200
 
