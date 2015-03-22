@@ -633,20 +633,302 @@ The message can be in red or green, based on the feedback's status field. Right 
 
 + Response 200
 
-## Poll Statistic [/polls/{articleId}/statistic]
+## Poll Statistic [/articles/{articleId}/polls/statistic]
 ### Get Poll statistic [GET]
 + Response 200
     
         {
-            "min": 0,
-            "max": 100,
-            "title": "Chart title",
-            "chart_data": [
-                {"lable": "1", "value": 20},
-                {"lable": "2", "value": 30},
-                {"lable": "3", "value": 40},
-                {"lable": "4", "value": 10},
-            ]
+            "message": null,
+            "errors": null,
+            "data": [
+                {
+                    "id": 889,
+                    "title": "Question 108",
+                    "options": [
+                        {
+                            "id": 3527,
+                            "title": "Option 1",
+                            "count": 1
+                        },
+                        {
+                            "id": 3528,
+                            "title": "Option 2",
+                            "count": 1
+                        },
+                        {
+                            "id": 3529,
+                            "title": "Option 3",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 890,
+                    "title": "Question 109",
+                    "options": [
+                        {
+                            "id": 3530,
+                            "title": "Option 1",
+                            "count": 1
+                        },
+                        {
+                            "id": 3531,
+                            "title": "Option 2",
+                            "count": 0
+                        },
+                        {
+                            "id": 3532,
+                            "title": "Option 3",
+                            "count": 0
+                        },
+                        {
+                            "id": 3533,
+                            "title": "Option 4",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 893,
+                    "title": "Question 112",
+                    "options": [
+                        {
+                            "id": 3540,
+                            "title": "Option 1",
+                            "count": 0
+                        },
+                        {
+                            "id": 3541,
+                            "title": "Option 2",
+                            "count": 0
+                        },
+                        {
+                            "id": 3542,
+                            "title": "Option 3",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 898,
+                    "title": "Question 117",
+                    "options": [
+                        {
+                            "id": 3560,
+                            "title": "Option 1",
+                            "count": 0
+                        },
+                        {
+                            "id": 3561,
+                            "title": "Option 2",
+                            "count": 0
+                        },
+                        {
+                            "id": 3562,
+                            "title": "Option 3",
+                            "count": 0
+                        },
+                        {
+                            "id": 3563,
+                            "title": "Option 4",
+                            "count": 0
+                        },
+                        {
+                            "id": 3564,
+                            "title": "Option 5",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 929,
+                    "title": "Question 148",
+                    "options": [
+                        {
+                            "id": 3682,
+                            "title": "Option 1",
+                            "count": 0
+                        },
+                        {
+                            "id": 3683,
+                            "title": "Option 2",
+                            "count": 0
+                        },
+                        {
+                            "id": 3684,
+                            "title": "Option 3",
+                            "count": 0
+                        },
+                        {
+                            "id": 3685,
+                            "title": "Option 4",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 973,
+                    "title": "Question 192",
+                    "options": [
+                        {
+                            "id": 3858,
+                            "title": "Option 1",
+                            "count": 0
+                        },
+                        {
+                            "id": 3859,
+                            "title": "Option 2",
+                            "count": 0
+                        },
+                        {
+                            "id": 3860,
+                            "title": "Option 3",
+                            "count": 0
+                        },
+                        {
+                            "id": 3861,
+                            "title": "Option 4",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 982,
+                    "title": "Question 201",
+                    "options": [
+                        {
+                            "id": 3895,
+                            "title": "Option 1",
+                            "count": 0
+                        },
+                        {
+                            "id": 3896,
+                            "title": "Option 2",
+                            "count": 0
+                        },
+                        {
+                            "id": 3897,
+                            "title": "Option 3",
+                            "count": 0
+                        },
+                        {
+                            "id": 3898,
+                            "title": "Option 4",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 1025,
+                    "title": "Question 244",
+                    "options": [
+                        {
+                            "id": 4067,
+                            "title": "Option 1",
+                            "count": 0
+                        },
+                        {
+                            "id": 4068,
+                            "title": "Option 2",
+                            "count": 0
+                        },
+                        {
+                            "id": 4069,
+                            "title": "Option 3",
+                            "count": 0
+                        },
+                        {
+                            "id": 4070,
+                            "title": "Option 4",
+                            "count": 0
+                        },
+                        {
+                            "id": 4071,
+                            "title": "Option 5",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 1063,
+                    "title": "Question 282",
+                    "options": [
+                        {
+                            "id": 4216,
+                            "title": "Option 1",
+                            "count": 0
+                        },
+                        {
+                            "id": 4217,
+                            "title": "Option 2",
+                            "count": 0
+                        },
+                        {
+                            "id": 4218,
+                            "title": "Option 3",
+                            "count": 0
+                        },
+                        {
+                            "id": 4219,
+                            "title": "Option 4",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 1072,
+                    "title": "Question 291",
+                    "options": [
+                        {
+                            "id": 4253,
+                            "title": "Option 1",
+                            "count": 0
+                        },
+                        {
+                            "id": 4254,
+                            "title": "Option 2",
+                            "count": 0
+                        },
+                        {
+                            "id": 4255,
+                            "title": "Option 3",
+                            "count": 0
+                        },
+                        {
+                            "id": 4256,
+                            "title": "Option 4",
+                            "count": 0
+                        },
+                        {
+                            "id": 4257,
+                            "title": "Option 5",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 1080,
+                    "title": "Question 299",
+                    "options": [
+                        {
+                            "id": 4290,
+                            "title": "Option 1",
+                            "count": 0
+                        },
+                        {
+                            "id": 4291,
+                            "title": "Option 2",
+                            "count": 0
+                        },
+                        {
+                            "id": 4292,
+                            "title": "Option 3",
+                            "count": 0
+                        }
+                    ]
+                }
+            ],
+            "extra_data": null
         }
 
 # Group Events
