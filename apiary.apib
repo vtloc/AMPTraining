@@ -367,50 +367,42 @@ The message can be in red or green, based on the feedback's status field. Right 
                     "options": [
                         {
                             "id": 857,
-                            "title": "Option 1"
+                            "title": "Option 1",
+                            "type": "LABEL"
                         },
                         {
                             "id": 858,
-                            "title": "Option 2"
+                            "title": "Option 2",
+                            "type": "INPUT"
                         },
                         {
                             "id": 859,
-                            "title": "Option 3"
+                            "title": "Option 3",
+                            "type": "INPUT"
                         },
                         {
                             "id": 860,
-                            "title": "Option 4"
+                            "title": "Option 4",
+                            "type": "INPUT"
                         }
                     ],
                     "feedback": [
                         {
                             "id": 789,
                             "message": "Feedback for option 857,858,859",
-                            "option_ids": [
-                                "857",
-                                "858",
-                                "859"
-                            ],
+                            "option_ids": "857,858,859",
                             "status_id": 1
                         },
                         {
                             "id": 790,
                             "message": "Feedback for option 857,858,860",
-                            "option_ids": [
-                                "857",
-                                "858",
-                                "860"
-                            ],
+                            "option_ids": "857,858,860",
                             "status_id": 1
                         },
                         {
                             "id": 791,
                             "message": "Feedback for option 857,859,860",
-                            "option_ids": [
-                                "857",
-                                "859",
-                                "860"
-                            ],
+                            "option_ids": "857,859,860",
                             "status_id": 2
                         }
                     ]
@@ -422,26 +414,25 @@ The message can be in red or green, based on the feedback's status field. Right 
                     "options": [
                         {
                             "id": 897,
-                            "title": "Option 1"
+                            "title": "Option 1",
+                            "type": "LABEL"
                         },
                         {
                             "id": 898,
-                            "title": "Option 2"
+                            "title": "Option 2",
+                            "type": "INPUT"
                         },
                         {
                             "id": 899,
-                            "title": "Option 3"
+                            "title": "Option 3",
+                            "type": "INPUT"
                         }
                     ],
                     "feedback": [
                         {
                             "id": 820,
                             "message": "Feedback for option 897,898,899",
-                            "option_ids": [
-                                "897",
-                                "898",
-                                "899"
-                            ],
+                            "option_ids": "897,898,899",
                             "status_id": 2
                         }
                     ]
@@ -453,125 +444,71 @@ The message can be in red or green, based on the feedback's status field. Right 
                     "options": [
                         {
                             "id": 900,
-                            "title": "Option 1"
+                            "title": "Option 1",
+                            "type": "LABEL"
                         },
                         {
                             "id": 901,
-                            "title": "Option 2"
+                            "title": "Option 2",
+                            "type": "INPUT"
                         },
                         {
                             "id": 902,
-                            "title": "Option 3"
+                            "title": "Option 3",
+                            "type": "LABEL"
                         },
                         {
                             "id": 903,
-                            "title": "Option 4"
+                            "title": "Option 4",
+                            "type": "LABEL"
                         },
                         {
                             "id": 904,
-                            "title": "Option 5"
+                            "title": "Option 5",
+                            "type": "INPUT"
                         }
                     ],
                     "feedback": [
                         {
                             "id": 821,
                             "message": "Feedback for option 900,902,904",
-                            "option_ids": [
-                                "900",
-                                "902",
-                                "904"
-                            ],
+                            "option_ids": "900,902,904",
                             "status_id": 1
                         },
                         {
                             "id": 822,
                             "message": "Feedback for option 901,902,904",
-                            "option_ids": [
-                                "901",
-                                "902",
-                                "904"
-                            ],
+                            "option_ids": "901,902,904",
                             "status_id": 1
                         },
                         {
                             "id": 823,
                             "message": "Feedback for option 901,902,903",
-                            "option_ids": [
-                                "901",
-                                "902",
-                                "903"
-                            ],
+                            "option_ids": "901,902,903",
                             "status_id": 2
                         },
                         {
                             "id": 824,
                             "message": "Feedback for option 900,902,903",
-                            "option_ids": [
-                                "900",
-                                "902",
-                                "903"
-                            ],
+                            "option_ids": "900,902,903",
                             "status_id": 1
                         },
                         {
                             "id": 825,
                             "message": "Feedback for option 900,901,903",
-                            "option_ids": [
-                                "900",
-                                "901",
-                                "903"
-                            ],
+                            "option_ids": "900,901,903",
                             "status_id": 1
                         },
                         {
                             "id": 826,
                             "message": "Feedback for option 900,901,902",
-                            "option_ids": [
-                                "900",
-                                "901",
-                                "902"
-                            ],
+                            "option_ids": "900,901,902",
                             "status_id": 1
                         }
                     ]
                 }
             ],
             "extra_data": null
-        }
-
-## Quiz Submit [/articles/{articleId}/quizzes/answers]
-### submit quiz result [POST]
-+ Request (application/json)
-
-        {
-            'answers': [
-                {
-                    'question_id': 1,
-                    'options': [
-                        {
-                            'id': 1,
-                            'value': 'abc'
-                        },
-                        {
-                            'id': 2,
-                            'value': 'abc'
-                        },
-                    ]
-                },
-                {
-                    'question_id': 2,
-                    'options': [
-                        {
-                            'id': 1,
-                            'value': 'abc'
-                        },
-                        {
-                            'id': 2,
-                            'value': 'abc'
-                        },
-                    ]
-                }
-            ]
         }
 
 + Response 200
