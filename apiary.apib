@@ -511,6 +511,41 @@ The message can be in red or green, based on the feedback's status field. Right 
             "extra_data": null
         }
 
+## Quiz Submit [/articles/{articleId}/quizzes/answers]
+### submit quiz result [POST]
++ Request (application/json)
+
+        {
+            'answers': [
+                {
+                    'question_id': 1,
+                    'options': [
+                        {
+                            'id': 1,
+                            'value': 'abc'
+                        },
+                        {
+                            'id': 2,
+                            'value': 'abc'
+                        },
+                    ]
+                },
+                {
+                    'question_id': 2,
+                    'options': [
+                        {
+                            'id': 1,
+                            'value': 'abc'
+                        },
+                        {
+                            'id': 2,
+                            'value': 'abc'
+                        },
+                    ]
+                }
+            ]
+        }
+
 + Response 200
 
 # Group Polls
