@@ -564,34 +564,16 @@ The message can be in red or green, based on the feedback's status field. Right 
 + Request (application/json)
 
         {
-            'answers': [
-                {
-                    'question_id': 1,
-                    'options': [
-                        {
-                            'id': 1,
-                            'value': 'abc'
-                        },
-                        {
-                            'id': 2,
-                            'value': 'abc'
-                        },
-                    ]
-                },
-                {
-                    'question_id': 2,
-                    'options': [
-                        {
-                            'id': 1,
-                            'value': 'abc'
-                        },
-                        {
-                            'id': 2,
-                            'value': 'abc'
-                        },
-                    ]
-                }
-            ]
+            "answers[0][question_id]": 1,
+            "answers[0][opstions][0][id]": 1,
+            "answers[0][opstions][0][value]": "Options value" ,
+            "answers[0][opstions][1][id]": 2,
+            "answers[0][opstions][1][value]": "",
+            "answers[1][question_id]": 2,
+            "answers[1][opstions][0][id]": 3,
+            "answers[1][opstions][0][value]": "Options value"
+            "answers[1][opstions][1][id]": 3,
+            "answers[1][opstions][1][value]": ""
         }
 
 + Response 200
@@ -813,18 +795,11 @@ Option's type can be **INPUT** or **LABEL**
 + Request (application/json)
 
         {
-            'answers': {
-                'question_id': 1,
-                'options': [
-                    {
-                        'id': 1
-                    },
-                    {
-                        'id': 2,
-                        'value': 'abc'
-                    }
-                ]
-            }
+            "answers[question_id]": 1,
+            "answers[options][0][id]": 1,
+            "answers[options][0][value]": "",
+            "answers[options][1][id]": 1,
+            "answers[options][1][value]": "Feedback value",
         }
     
 + Response 200
