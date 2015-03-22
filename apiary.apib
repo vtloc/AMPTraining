@@ -688,26 +688,26 @@ Each event has 3 states: OPEN, ONGOING, CLOSED.
 ### Get Event's detail [GET]
 + Response 200 (application/json)
 
-    {
-        "error": null, 
-        "message": null, 
-        "data": {
-            "id": "1",
-            "detail": "event detail 123 45 6",
-            "name": "event name - user joined",
-            "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg",
-            "start_time": "2014-02-20T19:20+00:00",
-            "end_time": "2014-02-22T19:20+00:00",
-            "latitude": 10.000,
-            "longitude": 104.001,
-            "address": "165, hai ba trung",
-            "status_id": 1,
-            "joined": false,
-            "attendee_count": 100,
-            "interesting_count": 40,
-            "interested_count": 30
+        {
+            "error": null, 
+            "message": null, 
+            "data": {
+                "id": "1",
+                "detail": "event detail 123 45 6",
+                "name": "event name - user joined",
+                "thumb": "http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg",
+                "start_time": "2014-02-20T19:20+00:00",
+                "end_time": "2014-02-22T19:20+00:00",
+                "latitude": 10.000,
+                "longitude": 104.001,
+                "address": "165, hai ba trung",
+                "status_id": 1,
+                "joined": false,
+                "attendee_count": 100,
+                "interesting_count": 40,
+                "interested_count": 30
+            }
         }
-    }
         
 ## Event [/events/{eventId}/statistic]
 ### Get Event's statistic [GET]
@@ -727,30 +727,56 @@ Option's type can be **INPUT** or **LABEL**
 ### Get event feedback [GET]
 + Response 200 (application/json)
     
-    {
-        "error": null, 
-        "message": null, 
-        "data":
         {
-            "question": "question for feedback",
-            "type": "MULTI_CHOICE",
-            "option_list": [
-                {"id": "1", "type" : "LABEL", "text": "option 1"},
-                {"id": "2", "type" : "LABEL", "text": "option 2"},
-                {"id": "3","type" : "INPUT",  "text": "othes:"}
-            ]
+            "error": null, 
+            "message": null, 
+            "data":
+            {
+                "id": 234,
+                "type_id": 2,
+                "title": "Question 1",
+                "options": [
+                    {
+                        "id": 857,
+                        "title": "Option 1",
+                        "type": "LABEL"
+                    },
+                    {
+                        "id": 858,
+                        "title": "Option 2",
+                        "type": "LABEL"
+                    },
+                    {
+                        "id": 859,
+                        "title": "Option 3",
+                        "type": "LABEL"
+                    },
+                    {
+                        "id": 860,
+                        "title": "Option 4",
+                        "type": "INPUT"
+                    }
+                ],
+            }
         }
-    }
         
 ## Event's feedback submit [/events/{eventId}/feedback/submit]
 ### Submit event's feedback [POST]
 + Request (application/json)
 
-        [ 
-        { "id" : "1" },
-        { "id" : "2" },
-        { "id" : "3", "value" : "This is not a good place for event"}
-        ]
+        {
+            'answers': {
+                'question_id': 1,
+                'options': [
+                    {
+                        'id': 1
+                    },
+                    {
+                        'id': 2,
+                        'value': 'abc'
+                    }
+            }
+        }
     
 + Response 200
 
