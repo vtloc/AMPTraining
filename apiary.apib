@@ -1952,13 +1952,29 @@ content_type: BLOG, LESSON, ARTICLE.
         {"token": "user_token"}
     
 + Response 200 (applicaion/json)
-
+    {
+        "message": null,
+        "errors": null,
+        "data":
         [
-            {"id", "type": "USER_ACTION", "content_id": "content_id", "conten_title": "content_title", 
-            "create_at": "2014-02-22T19:20+00:00", "content_type": "BLOG"}, 
-            {"id", "type": "USER_ACTION", "content_id": "content_id", "conten_title": "content_title", 
-            "create_at": "2014-02-22T19:20+00:00", "content_type": "LESSON"}
+            {
+                "id": 1, 
+                "type": "USER_ACTION", 
+                "content_id": 10, 
+                "conten_title": "abc def ghi jkl", 
+                "create_at": "2014-02-22T19:20+00:00", 
+                "content_type": "BLOG"
+            }, 
+            {
+                "id": 2, 
+                "type": "USER_ACTION", 
+                "content_id": 2, 
+                "conten_title": "content_title", 
+                "create_at": "2014-02-22T19:20+00:00", 
+                "content_type": "LESSON"
+            }
         ]
+    }
         
 # Group Api for My Profile
 ## Get My Profile [/myprofile]
