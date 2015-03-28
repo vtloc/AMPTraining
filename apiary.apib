@@ -1975,6 +1975,23 @@ content_type: BLOG, LESSON, ARTICLE.
             }
         ]
     }
+
+
+## Notifications Count [/notifications/count]
+### Get count all notifications [GET]
++ Request (application/json)
+    
+        {"token": "user_token"}
+    
++ Response 200 (applicaion/json)
+    {
+        "message": null,
+        "errors": null,
+        "data":
+            {
+                "notification_count": 5
+            }
+    }
         
 # Group Api for My Profile
 ## Get My Profile [/myprofile]
