@@ -1994,7 +1994,7 @@ content_type: BLOG, LESSON, ARTICLE.
     }
         
 # Group Api for My Profile
-## Get My Profile [/myprofile]
+## Get My Profile [/profile]
 ### Get logined user's detail [GET]
 + Response 200 (application/json)
 
@@ -2141,7 +2141,7 @@ content_type: BLOG, LESSON, ARTICLE.
             "extra_data": null
         }
 
-## "Interested to me" collection [/myprofile/interestedme/{?page}{?per_page}{?sort}{?order}{?name}]
+## "Interested to me" collection [/profile/interested/{?page}{?per_page}{?sort}{?order}{?name}]
 ### get user list [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
@@ -2207,7 +2207,7 @@ content_type: BLOG, LESSON, ARTICLE.
             "errors": null
         }
 
-## "I'm interested" collection [/myprofile/interested/{?page}{?per_page}{?sort}{?order}{?name}]
+## "I'm interested" collection [/profile/interested/{?page}{?per_page}{?sort}{?order}{?name}]
 ### Get "I'm interested" user list [GET]
 + Parameters
     + page (optional, number, `1` ) ... Default value: 1
