@@ -1943,7 +1943,21 @@ Types of user action: SHARE, FOLLOW/UNFOLLOW(other user), RATE, ATTENDANT(event)
         }
         
 # Group Notifications
-Notification will have 3 types: USER_ACTION, NEW_ARTICLE and NEW_EVENT.
+There are 3 type of notifications:
+    - When an article, blog, lesson is published (action_id = 12).
+    - When an event is canceled (action_id = 12).
+    - When an user interested to logging in user (action_id = 2).
+    
+Regarding to target, a target can be:
+    - user (target_type_id = 4) 
+    - article (target_type_id = 1)
+    - blog (target_type_id = 2)
+    - lesson (target_type_id = 3)
+    - event ((target_type_id = 5)
+
+Ex for action_id = 12, action_value = 'Abc...', target_id = 11, target_type_id = 3.
+"There is a new lesson with id = 11 and title = 'abc...'"
+
 content_type: BLOG, LESSON, ARTICLE.
 ## Notifications Collection [/notifications]
 ### Get list all notifications [GET]
@@ -1952,29 +1966,91 @@ content_type: BLOG, LESSON, ARTICLE.
         {"token": "user_token"}
     
 + Response 200 (applicaion/json)
-    {
-        "message": null,
-        "errors": null,
-        "data":
-        [
-            {
-                "id": 1, 
-                "type": "USER_ACTION", 
-                "content_id": 10, 
-                "content_title": "abc def ghi jkl", 
-                "create_at": "2014-02-22T19:20+00:00", 
-                "content_type": "BLOG"
-            }, 
-            {
-                "id": 2, 
-                "type": "USER_ACTION", 
-                "content_id": 2, 
-                "content_title": "content_title", 
-                "create_at": "2014-02-22T19:20+00:00", 
-                "content_type": "LESSON"
+
+        {
+            "message": null,
+            "errors": null,
+            "data": [
+                {
+                    "id": 665,
+                    "action_id": 2,
+                    "action_value": "",
+                    "target_id": 2,
+                    "target_type_id": 4
+                },
+                {
+                    "id": 664,
+                    "action_id": 14,
+                    "action_value": "Loc's event 1",
+                    "target_id": 13,
+                    "target_type_id": 5
+                },
+                {
+                    "id": 79,
+                    "action_id": 12,
+                    "action_value": "Quyen's article 2",
+                    "target_id": 28,
+                    "target_type_id": 1
+                },
+                {
+                    "id": 80,
+                    "action_id": 12,
+                    "action_value": "Quyen's blog 2",
+                    "target_id": 29,
+                    "target_type_id": 2
+                },
+                {
+                    "id": 77,
+                    "action_id": 12,
+                    "action_value": "Quyen's blog 1",
+                    "target_id": 26,
+                    "target_type_id": 2
+                },
+                {
+                    "id": 76,
+                    "action_id": 12,
+                    "action_value": "Quyen's article 1",
+                    "target_id": 25,
+                    "target_type_id": 1
+                },
+                {
+                    "id": 84,
+                    "action_id": 12,
+                    "action_value": "Quyen's lession 3",
+                    "target_id": 33,
+                    "target_type_id": 3
+                },
+                {
+                    "id": 85,
+                    "action_id": 12,
+                    "action_value": "Quyen's article 4",
+                    "target_id": 34,
+                    "target_type_id": 1
+                },
+                {
+                    "id": 81,
+                    "action_id": 12,
+                    "action_value": "Quyen's lession 2",
+                    "target_id": 30,
+                    "target_type_id": 3
+                },
+                {
+                    "id": 78,
+                    "action_id": 12,
+                    "action_value": "Quyen's lession 1",
+                    "target_id": 27,
+                    "target_type_id": 3
+                }
+            ],
+            "extra_data": {
+                "total": 38,
+                "per_page": 10,
+                "current_page": 1,
+                "last_page": 4,
+                "from": 1,
+                "to": 10
             }
-        ]
-    }
+        }
 
 
 ## Notifications Count [/notifications/count]
@@ -1984,14 +2060,15 @@ content_type: BLOG, LESSON, ARTICLE.
         {"token": "user_token"}
     
 + Response 200 (applicaion/json)
-    {
-        "message": null,
-        "errors": null,
-        "data":
-            {
-                "notification_count": 5
-            }
-    }
+
+        {
+            "message": null,
+            "errors": null,
+            "data":
+                {
+                    "notification_count": 5
+                }
+        }
         
 # Group Api for My Profile
 ## Get My Profile [/profile]
