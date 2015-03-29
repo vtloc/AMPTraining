@@ -1944,21 +1944,19 @@ Types of user action: SHARE, FOLLOW/UNFOLLOW(other user), RATE, ATTENDANT(event)
         
 # Group Notifications
 There are 3 type of notifications:
-    - When an article, blog, lesson is published (action_id = 12).
-    - When an event is canceled (action_id = 12).
-    - When an user interested to logging in user (action_id = 2).
+    + When an article, blog, lesson is published (action_id = 12).
+    + When an event is canceled (action_id = 12).
+    + When an user interested to logging in user (action_id = 2).
     
 Regarding to target, a target can be:
-    - user (target_type_id = 4) 
-    - article (target_type_id = 1)
-    - blog (target_type_id = 2)
-    - lesson (target_type_id = 3)
-    - event ((target_type_id = 5)
+    + user (target_type_id = 4) 
+    + article (target_type_id = 1)
+    + blog (target_type_id = 2)
+    + lesson (target_type_id = 3)
+    + event ((target_type_id = 5)
 
-Ex for action_id = 12, action_value = 'Abc...', target_id = 11, target_type_id = 3.
-"There is a new lesson with id = 11 and title = 'abc...'"
+Ex for action_id = 12, action_value = 'Abc...', target_id = 11, target_type_id = 3. That mean "There is a new lesson with id = 11 and title = 'abc...'"
 
-content_type: BLOG, LESSON, ARTICLE.
 ## Notifications Collection [/notifications]
 ### Get list all notifications [GET]
 + Request (application/json)
