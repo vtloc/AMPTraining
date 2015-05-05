@@ -2353,3 +2353,29 @@ Ex for action_id = 12, action_value = 'Abc...', target_id = 11, target_type_id =
             ,
             "errors": null
         }
+
+# Group Version Update
+## Get latest version [/androidapp/latest]
+### Get latest version [GET]
++ Response 200 (application/json)
+
+        {
+            message: null,
+            errors: null,
+            data: {
+                version_name: "Beta 2",
+                version_code: "2",
+                change_log: "I don't know..."
+            },
+            extra_data: null
+        }
+        
+## Donwload by version code [/androidapp/download/{version_code}]
+### Download by verison code [GET]
++ Parameters
+    + version_code (required, number, `2` )
++ Response 200 (application/file)
+
+        
+
+
