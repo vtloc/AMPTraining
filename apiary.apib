@@ -2354,8 +2354,8 @@ Ex for action_id = 12, action_value = 'Abc...', target_id = 11, target_type_id =
             "errors": null
         }
 
-# Group Version Update
-## Get latest version [/androidapp/latest]
+# Group Android app
+## Get latest version [/androidapps/latest]
 ### Get latest version [GET]
 + Response 200 (application/json)
 
@@ -2370,11 +2370,25 @@ Ex for action_id = 12, action_value = 'Abc...', target_id = 11, target_type_id =
             extra_data: null
         }
         
-## Donwload by version code [/androidapp/download/{version_code}]
+## Donwload by version code [/androidapps/download/{version_code}]
 ### Download by verison code [GET]
 + Parameters
     + version_code (required, number, `2` )
 + Response 200 (application/file)
+
+
+## Push notification [/androidapps/token]
+### Set device_token [POST]
++ Parameters
+    + device_token (required, string, `abc...xyz` )
++ Response 200 (application/json)
+
+        {
+            message: "Token has been updated successfully",
+            errors: null,
+            data: null,
+            extra_data: null
+        }
 
         
 
