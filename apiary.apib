@@ -252,6 +252,51 @@ Ex without errors:
             }
         }
         
+## Article [/articles/{articleId}/recommended_articles]
+### Get Recommended Articles [GET]
++ Parameters
+    + articleId (string) ... ID of article.
++ Response 200 (application/json)
+
+        {
+            "message": null,
+            "errors": null,
+            "data": {
+                {
+                    "id": 5,
+                    "title": "LESSON 2 ",
+                    "summary": "OK 2",
+                    "content": "hahaha",
+                    "type_id": 3,
+                    "view_count": 18,
+                    "share_count": 0,
+                    "comment_count": 1,
+                    "rating_count": 0,
+                    "rating_average": "0.0",
+                    "created_at": "2015-04-07T16:00:18+00:00",
+                    "thumb": "http://apollo.loc/uploads/Article/images/000/000/005/large/Penguins.jpg",
+                    "is_rated": false,
+                    "tags": []
+                },
+                {
+                    "id": 2,
+                    "title": "  LESSSON 1  ",
+                    "summary": "  OK 1  ",
+                    "content": "Hihihi",
+                    "type_id": 3,
+                    "view_count": 21,
+                    "share_count": 2,
+                    "comment_count": 0,
+                    "rating_count": 0,
+                    "rating_average": "0.0",
+                    "created_at": "2015-04-07T15:47:40+00:00",
+                    "thumb": "http://apollo.loc/assets/images/images-missing.png",
+                    "is_rated": false,
+                    "tags": []
+                }
+            }
+        }        
+        
 # Group Notes
 ## Notes Collection [/articles/{articleId}/notes]
 ### List all Article's note [GET]
